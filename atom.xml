@@ -6,7 +6,7 @@
   <link href="http://kingofkb.github.io/atom.xml" rel="self"/>
   
   <link href="http://kingofkb.github.io/"/>
-  <updated>2022-07-08T11:41:54.984Z</updated>
+  <updated>2022-07-14T13:21:44.158Z</updated>
   <id>http://kingofkb.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Dest0g3 520迎新赛两道SQL</title>
+    <link href="http://kingofkb.github.io/2022/07/14/Dest0g3%20520%E8%BF%8E%E6%96%B0%E8%B5%9B%E4%B8%A4%E9%81%93SQL/"/>
+    <id>http://kingofkb.github.io/2022/07/14/Dest0g3%20520%E8%BF%8E%E6%96%B0%E8%B5%9B%E4%B8%A4%E9%81%93SQL/</id>
+    <published>2022-07-14T13:20:00.000Z</published>
+    <updated>2022-07-14T13:21:44.158Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Dest0g3-520迎新赛两道SQL&quot;&gt;&lt;a href=&quot;#Dest0g3-520迎新赛两道SQL&quot; class=&quot;headerlink&quot; title=&quot;Dest0g3 520迎新赛两道SQL&quot;&gt;&lt;/a&gt;Dest0g3 520迎新赛两道SQL&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="ctf" scheme="http://kingofkb.github.io/categories/ctf/"/>
+    
+    
+    <category term="benchmark型SQL注入" scheme="http://kingofkb.github.io/tags/benchmark%E5%9E%8BSQL%E6%B3%A8%E5%85%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>2022Dest0g3 520迎新赛web复现【EasySSTI-NodeSoEasy】</title>
@@ -486,31 +511,6 @@
     
     
     <category term="php伪协议 union联合注入 源码泄露" scheme="http://kingofkb.github.io/tags/php%E4%BC%AA%E5%8D%8F%E8%AE%AE-union%E8%81%94%E5%90%88%E6%B3%A8%E5%85%A5-%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>极客大挑战 2019 HardSQL 1题解</title>
-    <link href="http://kingofkb.github.io/2022/01/27/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98%202019%20HardSQL%201%E9%A2%98%E8%A7%A3/"/>
-    <id>http://kingofkb.github.io/2022/01/27/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98%202019%20HardSQL%201%E9%A2%98%E8%A7%A3/</id>
-    <published>2022-01-27T09:30:00.000Z</published>
-    <updated>2022-02-07T09:18:03.576Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;极客大挑战-2019-HardSQL-1题解&quot;&gt;&lt;a href=&quot;#极客大挑战-2019-HardSQL-1题解&quot; class=&quot;headerlink&quot; title=&quot;极客大挑战 2019 HardSQL 1题解&quot;&gt;&lt;/a&gt;极客大挑战 2019 HardSQL</summary>
-        
-      
-    
-    
-    
-    <category term="ctf" scheme="http://kingofkb.github.io/categories/ctf/"/>
-    
-    
-    <category term="报错注入" scheme="http://kingofkb.github.io/tags/%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5/"/>
     
   </entry>
   
